@@ -19,42 +19,99 @@
     
 }
 
+// Thanks Paw by luckymarmot, it's an amazing app! Get it here https://paw.cloud (Yes I Joseph Shenton added this lmao)
+
+- (void)sendRequest:(id)sender {
+    /* Configure session, choose between:
+     * defaultSessionConfiguration
+     * ephemeralSessionConfiguration
+     * backgroundSessionConfigurationWithIdentifier:
+     And set session-wide properties, such as: HTTPAdditionalHeaders,
+     HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
+     */
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     
-- (void)sendRequestRequest:(id)sender {
-        // Request (POST https://tsssaver.1conan.com/app.php)
-        
-        // Create manager
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        
-        // Create request
-        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"https://tsssaver.1conan.com/app.php" parameters:nil error:NULL];
-        
-        // Form URL-Encoded Body
-        NSDictionary* bodyParameters = @{
-                                         @"deviceID":@"iPhone8,4",
-                                         @"ecid":@"4913228056185",
-                                         @"boardConfig":@"N69uAP",
-                                         };
-        
-        NSMutableURLRequest* request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST" URLString:@"https://tsssaver.1conan.com/app.php" parameters:bodyParameters error:NULL];
-        
-        // Add Headers
-        [request setValue:@"Twilight/1.0" forHTTPHeaderField:@"User-Agent"];
-        [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-        
-        // Fetch Request
-        AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request
-                                                                             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                                 NSLog(@"HTTP Response Status Code: %ld", [operation.response statusCode]);
-                                                                                 NSLog(@"HTTP Response Body: %@", responseObject);
-                                                                             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                                 NSLog(@"HTTP Request failed: %@", error);
-                                                                             }];
-        
-        [manager.operationQueue addOperation:operation];
-    }
+    /* Create session, and optionally set a NSURLSessionDelegate. */
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
     
+    /* Create the Request:
+     Request (POST https://tsssaver.1conan.com/app.php)
+     */
     
+    NSURL* URL = [NSURL URLWithString:@"https://tsssaver.1conan.com/app.php"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"POST";
+    
+    // Headers
+    
+    [request addValue:@"Twilight/1.0" forHTTPHeaderField:@"User-Agent"];
+    [request addValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    // Form URL-Encoded Body
+    
+    NSDictionary* bodyParameters = @{
+                                     @"deviceID": @"MODEL",
+                                     @"ecid": @"ECID",
+                                     @"boardConfig": @"BOARDCONFIG",
+                                     };
+    request.HTTPBody = [NSStringFromQueryParameters(bodyParameters) dataUsingEncoding:NSUTF8StringEncoding];
+    
+    /* Start a new Task */
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+        }
+        else {
+            // Failure
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
+}
+
+/*
+ * Utils: Add this section before your class implementation
+ */
+
+/**
+ This creates a new query parameters string from the given NSDictionary. For
+ example, if the input is @{@"day":@"Tuesday", @"month":@"January"}, the output
+ string will be @"day=Tuesday&month=January".
+ @param queryParameters The input dictionary.
+ @return The created parameters string.
+ */
+static NSString* NSStringFromQueryParameters(NSDictionary* queryParameters)
+{
+    NSMutableArray* parts = [NSMutableArray array];
+    [queryParameters enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+        NSString *part = [NSString stringWithFormat: @"%@=%@",
+                          [key stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
+                          [value stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]
+                          ];
+        [parts addObject:part];
+    }];
+    return [parts componentsJoinedByString: @"&"];
+}
+
+/**
+ Creates a new URL by adding the given query parameters.
+ @param URL The input URL.
+ @param queryParameters The query parameter dictionary to add.
+ @return A new NSURL.
+ */
+static NSURL* NSURLByAppendingQueryParameters(NSURL* URL, NSDictionary* queryParameters)
+{
+    NSString* URLString = [NSString stringWithFormat:@"%@?%@",
+                           [URL absoluteString],
+                           NSStringFromQueryParameters(queryParameters)
+                           ];
+    return [NSURL URLWithString:URLString];
+}
+
+
+
 
 
 @end
