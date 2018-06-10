@@ -23,7 +23,7 @@
 
 - (void)sendRequest:(id)sender {
     /* Configure session, choose between:
-     * defaultSessionConfiguration
+     * defaultSessionConfiguration 
      * ephemeralSessionConfiguration
      * backgroundSessionConfigurationWithIdentifier:
      And set session-wide properties, such as: HTTPAdditionalHeaders,
