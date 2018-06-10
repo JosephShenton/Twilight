@@ -98,7 +98,7 @@
 		FE5D2F8920CA211400995B65 /* MBSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSegue.h; sourceTree = "<group>"; };
 		FE5D2F8A20CA211400995B65 /* MBSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSegue.m; sourceTree = "<group>"; };
 		FE5D2F8B20CA211400995B65 /* MBFadeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFadeSegue.h; sourceTree = "<group>"; };
-		FE5D2F8C20CA211500995B65 /* MBFadeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBFadeSegue.m; path = "../../../Downloads/MBSegueCollection-master/MBSegueCollection/MBFadeSegue.m"; sourceTree = "<group>"; };
+		FE5D2F8C20CA211500995B65 /* MBFadeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFadeSegue.m; sourceTree = "<group>"; };
 		FE5D2F8F20CA27B800995B65 /* twilightupdates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twilightupdates.png; sourceTree = "<group>"; };
 		FE5D2F9120CA2AA400995B65 /* twilight_updates.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twilight_updates.jpg; sourceTree = "<group>"; };
 		FE5D2F9320CA2D5500995B65 /* ads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ads.png; sourceTree = "<group>"; };
