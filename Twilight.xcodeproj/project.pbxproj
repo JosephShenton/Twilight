@@ -37,6 +37,9 @@
 		FE5D2F9220CA2AA900995B65 /* twilight_updates.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5D2F9120CA2AA400995B65 /* twilight_updates.jpg */; };
 		FE5D2F9420CA2D5A00995B65 /* ads.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5D2F9320CA2D5500995B65 /* ads.png */; };
 		FE5D2F9720CA33CA00995B65 /* tweaks.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5D2F9620CA33CA00995B65 /* tweaks.m */; };
+		FE94B23420CCFA0C0023CCE9 /* nonce.png in Resources */ = {isa = PBXBuildFile; fileRef = FE94B23320CCFA080023CCE9 /* nonce.png */; };
+		FE94B23620CCFADC0023CCE9 /* shsh2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE94B23520CCFAD20023CCE9 /* shsh2.png */; };
+		FE94B23B20CCFF9A0023CCE9 /* SHSH2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94B23A20CCFF9A0023CCE9 /* SHSH2TableViewController.m */; };
 		FEA5934620CCAEA200B76462 /* plusify.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA5934520CCAE9E00B76462 /* plusify.png */; };
 		FEA5934920CCC7E900B76462 /* devices.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA5934820CCC7E900B76462 /* devices.m */; };
 		FEDA149420CA488400EB4442 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148420CA488400EB4442 /* SCLTimerDisplay.m */; };
@@ -109,6 +112,10 @@
 		FE5D2F9320CA2D5500995B65 /* ads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ads.png; sourceTree = "<group>"; };
 		FE5D2F9520CA33CA00995B65 /* tweaks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tweaks.h; sourceTree = "<group>"; };
 		FE5D2F9620CA33CA00995B65 /* tweaks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tweaks.m; sourceTree = "<group>"; };
+		FE94B23320CCFA080023CCE9 /* nonce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonce.png; sourceTree = "<group>"; };
+		FE94B23520CCFAD20023CCE9 /* shsh2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shsh2.png; sourceTree = "<group>"; };
+		FE94B23920CCFF9A0023CCE9 /* SHSH2TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSH2TableViewController.h; sourceTree = "<group>"; };
+		FE94B23A20CCFF9A0023CCE9 /* SHSH2TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSH2TableViewController.m; sourceTree = "<group>"; };
 		FEA5934520CCAE9E00B76462 /* plusify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusify.png; sourceTree = "<group>"; };
 		FEA5934720CCC7E900B76462 /* devices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = devices.h; sourceTree = "<group>"; };
 		FEA5934820CCC7E900B76462 /* devices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = devices.m; sourceTree = "<group>"; };
@@ -216,6 +223,8 @@
 				FE5C152820CA037200F977A7 /* TweakBox.png */,
 				FE5C152C20CA0A0300F977A7 /* emoji.png */,
 				FE5C152E20CA0AE800F977A7 /* screenresolution.png */,
+				FE94B23320CCFA080023CCE9 /* nonce.png */,
+				FE94B23520CCFAD20023CCE9 /* shsh2.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -329,6 +338,15 @@
 			path = jelbrek;
 			sourceTree = "<group>";
 		};
+		FE94B23820CCFEFC0023CCE9 /* Safety Tweaks */ = {
+			isa = PBXGroup;
+			children = (
+				FE94B23920CCFF9A0023CCE9 /* SHSH2TableViewController.h */,
+				FE94B23A20CCFF9A0023CCE9 /* SHSH2TableViewController.m */,
+			);
+			name = "Safety Tweaks";
+			sourceTree = "<group>";
+		};
 		FEDA148220CA488400EB4442 /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +396,7 @@
 				FE5C154020CA1D0A00F977A7 /* Design */,
 				FE5C153720CA133C00F977A7 /* Global Classes */,
 				FE5C153320CA130E00F977A7 /* Tweak Applicators */,
+				FE94B23820CCFEFC0023CCE9 /* Safety Tweaks */,
 			);
 			path = Twilight;
 			sourceTree = "<group>";
@@ -403,6 +422,7 @@
 				FEF3267520C9DDD300CD752D /* Sources */,
 				FEF3267620C9DDD300CD752D /* Frameworks */,
 				FEF3267720C9DDD300CD752D /* Resources */,
+				FE94B23720CCFB7B0023CCE9 /* Increment Build */,
 			);
 			buildRules = (
 			);
@@ -459,6 +479,7 @@
 				FE5C152620C9F65900F977A7 /* revokes.png in Resources */,
 				FE5C152920CA037300F977A7 /* TweakBox.png in Resources */,
 				FE5C152D20CA0A0900F977A7 /* emoji.png in Resources */,
+				FE94B23420CCFA0C0023CCE9 /* nonce.png in Resources */,
 				FEFCC4E420CA1F810062E025 /* macOSMojaveDay.jpg in Resources */,
 				FE5D2F9220CA2AA900995B65 /* twilight_updates.jpg in Resources */,
 				FEF3268C20C9DDD800CD752D /* LaunchScreen.storyboard in Resources */,
@@ -471,6 +492,7 @@
 				FE5D2F9420CA2D5A00995B65 /* ads.png in Resources */,
 				FE5C152F20CA0AEA00F977A7 /* screenresolution.png in Resources */,
 				FEFCC4E520CA1F810062E025 /* macOSMojaveNight.jpg in Resources */,
+				FE94B23620CCFADC0023CCE9 /* shsh2.png in Resources */,
 				FE5C151B20C9F18200F977A7 /* carrier.png in Resources */,
 				FEA5934620CCAEA200B76462 /* plusify.png in Resources */,
 				FEF3268720C9DDD300CD752D /* Main.storyboard in Resources */,
@@ -482,6 +504,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FE94B23720CCFB7B0023CCE9 /* Increment Build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FEF3267520C9DDD300CD752D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -491,6 +534,7 @@
 				FE5D2F8E20CA211500995B65 /* MBFadeSegue.m in Sources */,
 				FE5C155220CA1D9500F977A7 /* libjb.m in Sources */,
 				FE5C155020CA1D9500F977A7 /* jelbrek.m in Sources */,
+				FE94B23B20CCFF9A0023CCE9 /* SHSH2TableViewController.m in Sources */,
 				FEDA149820CA488400EB4442 /* SCLSwitchView.m in Sources */,
 				FE5D2F8D20CA211500995B65 /* MBSegue.m in Sources */,
 				FEF3269820C9E4A400CD752D /* HomeTableViewController.m in Sources */,
