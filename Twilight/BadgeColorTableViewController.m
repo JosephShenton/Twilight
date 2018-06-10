@@ -37,8 +37,16 @@
     } else {
         if ( IDIOM == IPAD ) {
             if (![setBadgeColor(strdup([updatedBadgeColor.text UTF8String]), strdup([@"3x" UTF8String]))  isEqual: @""]) {
-                [defaults setObject:updatedBadgeColor.text forKey:@"badgeColor"];
-                [defaults setBool:YES forKey:@"hasCustomBadgeColor"];
+                NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+                
+                NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
+                // NSLog(@"current install status is %@", installStatus);
+                
+                [tweaks setValue:updatedBadgeColor.text forKey: @"BadgeColor"];
+                
+                [tweaks writeToFile:pathForFile atomically: YES];
+                
                 SCLAlertView *alert = [[SCLAlertView alloc] init];
                 [alert addTimerToButtonIndex:0 reverse:YES];
                 [alert alertIsDismissed:^{
@@ -48,14 +56,22 @@
             }
         } else {
             if (![setBadgeColor(strdup([updatedBadgeColor.text UTF8String]), strdup([@"2x" UTF8String]))  isEqual: @""]) {
-                [defaults setObject:updatedBadgeColor.text forKey:@"badgeColor"];
-                [defaults setBool:YES forKey:@"hasCustomBadgeColor"];
+                NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+                
+                NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
+                // NSLog(@"current install status is %@", installStatus);
+                
+                [tweaks setValue:updatedBadgeColor.text forKey: @"BadgeColor"];
+                
+                [tweaks writeToFile:pathForFile atomically: YES];
+                
                 SCLAlertView *alert = [[SCLAlertView alloc] init];
                 [alert addTimerToButtonIndex:0 reverse:YES];
                 [alert alertIsDismissed:^{
                     rebootDevice();
                 }];
-                [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 6 seconds!" closeButtonTitle:@"Reboot" duration:6.0f];
+                [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 10 seconds!" closeButtonTitle:@"Reboot" duration:10.0f];
             }
         }
         

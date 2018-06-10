@@ -78,7 +78,7 @@
     NSLog(@"[INFO]: Width: %@, Height: %@", widthHeight[0], widthHeight[1]);
     
     
-    if ([changeScreenResolutions((int)[widthHeight[0] integerValue], (int)[widthHeight[1] integerValue]) isEqual: @"reboot"]) {
+    if ([changeScreenResolutions((int)[widthHeight[0] intValue], (int)[widthHeight[1] intValue]) isEqual: @"reboot"]) {
         NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
         
         NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];

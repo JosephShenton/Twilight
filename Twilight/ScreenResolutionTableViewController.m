@@ -67,12 +67,22 @@
         
         
         if ([changeScreenResolutions((int)[widthHeight[0] integerValue], (int)[widthHeight[1] integerValue]) isEqual: @"reboot"]) {
+            NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+            
+            NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+            // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
+            // NSLog(@"current install status is %@", installStatus);
+            
+            [tweaks setValue:selected forKey: @"ScreenResolution"];
+            
+            [tweaks writeToFile:pathForFile atomically: YES];
+            
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             [alert addTimerToButtonIndex:0 reverse:YES];
             [alert alertIsDismissed:^{
                 rebootDevice();
             }];
-            [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 6 seconds!" closeButtonTitle:@"Reboot" duration:6.0f];
+            [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 10 seconds!" closeButtonTitle:@"Reboot" duration:10.0f];
         }
     }
 }

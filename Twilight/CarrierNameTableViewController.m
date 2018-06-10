@@ -43,6 +43,17 @@
     } else {
         NSString *carrier = setCarrierName(carrierNameNew.text);
         if ([carrier  isEqual: @"reboot"]) {
+            
+            NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+            
+            NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+            // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
+            // NSLog(@"current install status is %@", installStatus);
+            
+            [tweaks setValue:carrierNameNew.text forKey: @"CustomCarrier"];
+            
+            [tweaks writeToFile:pathForFile atomically: YES];
+            
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             [alert addTimerToButtonIndex:0 reverse:YES];
             [alert alertIsDismissed:^{
