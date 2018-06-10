@@ -5,6 +5,8 @@
 #include "libjb.h"
 #include "offsetof.h"
 #include "jelbrek.h"
+#include <sys/mount.h>
+
 //#include "inject_criticald.h"
 //#include "unlocknvram.h"
 //#include <IOKit/IOKitLib.h>
@@ -13,6 +15,7 @@
 void init_jelbrek(mach_port_t tfp0, uint64_t kernel_base) {
     init_kernel_utils(tfp0);
     init_kernel(kernel_base, NULL);
+    initQiLin(tfp0, kernel_base); //Jonathan Levin: http://newosxbook.com/QiLin/
 }
 
 kern_return_t trust_bin(const char *path) {
@@ -83,169 +86,31 @@ BOOL get_root(pid_t pid) {
     return (geteuid() == 0) ? YES : NO;
 }
 
-/*void remount(){
-    
-    char *devpath = strdup("/dev/disk0s1s1");
-    uint64_t devVnode = getVnodeAtPath(devpath);
-    kwrite64(devVnode + off_v_specflags, 0); // clear dev vnode’s v_specflags
-    
-    /* 1. make a new mount of the device of root partition */
-    
-    /*char *newMPPath = strdup("/private/var/mobile/tmp");
-    createDirAtPath(newMPPath);
-    mountDevAtPathAsRW(devPath, newMPPath);
-    
-    
-    /* 2. Get mnt_data from the new mount */
-    
-    /*uint64_t newMPVnode = getVnodeAtPath(newMPPath);
-    uint64_t newMPMount = kread64(newMPVnode + off_v_mount);
-    uint64_t newMPMountData = kread64(newMPMount + off_mnt_data);
-    
-    
-    
-    /* 3. Modify root mount’s flag and remount */
-    
-    /*uint64_t rootVnode = getVnodeAtPath("/");
-    uint64_t rootMount = kread64(rootVnode + off_v_mount);
-    uint32_t rootMountFlag = kread64(rootMount + off_mnt_flag);
-    kwrite64(rootMount + off_mnt_flag, rootMountFlag & ~ ( MNT_NOSUID | MNT_RDONLY | MNT_ROOTFS));
-    
-    mount("apfs", "/", MNT_UPDATE, &devpath);
-    
-    /* 4. Replace root mount’s mnt_data with new mount’s mnt_data */
-    
-    /*kwrite64(rootMount + off_mnt_data, newMPMountData);
-    
-}*/
 
-
-//mach_port_t tfp0 = MACH_PORT_NULL;
-
-//static uint64_t our_proc = 0;
-//static uint64_t init_proc = 0;
-//static uint64_t kern_proc = 0;
-//static uint64_t kern_task = 0;
-
-kern_return_t mach_vm_read_overwrite(vm_map_t target_task, mach_vm_address_t address, mach_vm_size_t size, mach_vm_address_t data, mach_vm_size_t *outsize);
-kern_return_t mach_vm_write(vm_map_t target_task, mach_vm_address_t address, vm_offset_t data, mach_msg_type_number_t dataCnt);
-
-//size_t kread(uint64_t where, void *p, size_t size) {
-//
-//    if(tfp0 == MACH_PORT_NULL) {
-//        printf("[ERROR]: tfp0's port is null!\n");
-//    }
-//
-//    int rv;
-//    size_t offset = 0;
-//    while (offset < size) {
-//        mach_vm_size_t sz, chunk = 2048;
-//        if (chunk > size - offset) {
-//            chunk = size - offset;
-//        }
-//        rv = mach_vm_read_overwrite(tfp0, where + offset, chunk, (mach_vm_address_t)p + offset, &sz);
-//
-//        if (rv || sz == 0) {
-//            printf("[ERROR]: error reading buffer at @%p\n", (void *)(offset + where));
-//            break;
-//        }
-//        offset += sz;
-//    }
-//    return offset;
-//}
-
-uint64_t kread_uint64(uint64_t where) {
-    uint64_t value = 0;
-    size_t sz = kread(where, &value, sizeof(value));
-    return (sz == sizeof(value)) ? value : 0;
-}
-
-uint32_t kread_uint32(uint64_t where) {
-    uint32_t value = 0;
-    size_t sz = kread(where, &value, sizeof(value));
-    return (sz == sizeof(value)) ? value : 0;
-}
-
-//size_t kwrite(uint64_t where, const void *p, size_t size) {
-//    
-//    if(tfp0 == MACH_PORT_NULL) {
-//        printf("[ERROR]: tfp0's port is null!\n");
-//    }
-//    
-//    int rv;
-//    size_t offset = 0;
-//    while (offset < size) {
-//        size_t chunk = 2048;
-//        if (chunk > size - offset) {
-//            chunk = size - offset;
-//        }
-//        rv = mach_vm_write(tfp0, where + offset, (mach_vm_offset_t)p + offset, (mach_msg_type_number_t)chunk);
-//        if (rv) {
-//            printf("[ERROR]: error copying buffer into region: @%p\n", (void *)(offset + where));
-//            break;
-//        }
-//        offset += chunk;
-//    }
-//    return offset;
-//}
-
-size_t kwrite_uint64(uint64_t where, uint64_t value) {
-    return kwrite(where, &value, sizeof(value));
-}
-
-size_t kwrite_uint32(uint64_t where, uint32_t value) {
-    return kwrite(where, &value, sizeof(value));
-}
-
-/*
- *  Purpose: mounts rootFS as read/write (workaround by @SparkZheng)
- */
-kern_return_t remount(uint64_t kernel_base, uint64_t kaslr_slide) {
+void remount(){
+    uint64_t _rootvnode = find_rootvnode();
+    uint64_t rootfs_vnode = kread64(_rootvnode);
+    uint64_t v_mount = kread64(rootfs_vnode + offsetof_v_mount);
+    uint32_t v_flag = kread32(v_mount + offsetof_mnt_flag);
     
-    kern_return_t ret = KERN_SUCCESS;
+    v_flag = v_flag & ~MNT_NOSUID;
+    v_flag = v_flag & ~MNT_RDONLY;
     
-    // slide = base - 0xfffffff007004000
-    //    prepare_for_rw_with_fake_tfp0();
-    kernel_base = kernel_base;
+    kwrite32(v_mount + offsetof_mnt_flag, v_flag & ~MNT_ROOTFS);
     
-    printf("[INFO]: passing kernel_base: %llx\n", kernel_base);
-    kaslr_slide = kernel_base - 0xfffffff007004000;
-    printf("[INFO]: kaslr_slide: %llx\n", kaslr_slide);
+    char *nmz = strdup("/dev/disk0s1s1");
+    int rv = mount("apfs", "/", MNT_UPDATE, (void *)&nmz);
+    printf("remounting: %d\n", rv);
     
-    int rv = init_kernel(kernel_base, NULL);
+    v_mount = kread64(rootfs_vnode + offsetof_v_mount);
+    kwrite32(v_mount + offsetof_mnt_flag, v_flag);
     
-    if(rv != 0) {
-        printf("[ERROR]: could not initialize kernel\n");
-        ret = KERN_FAILURE;
-        return ret;
+    int fd = open("/RWTEST", O_RDONLY);
+    if (fd == -1) {
+        fd = creat("/RWTEST", 0777);
+    } else {
+        printf("File already exists!\n");
     }
-    
-    printf("[INFO]: sucessfully initialized kernel\n");
-    
-    char *dev_path = "/dev/disk0s1s1";
-    //    uint64_t dev_vnode = getVnodeAtPath(devpath);
-    
-    uint64_t rootvnode = find_rootvnode();
-    printf("[INFO]: _rootvnode: %llx (%llx)\n", rootvnode, rootvnode - kaslr_slide);
-    
-    if(rootvnode == 0) {
-        ret = KERN_FAILURE;
-        return ret;
-    }
-    
-    uint64_t rootfs_vnode = kread_uint64(rootvnode);
-    printf("[INFO]: rootfs_vnode: %llx\n", rootfs_vnode);
-    
-    uint64_t v_mount = kread_uint64(rootfs_vnode + 0xd8);
-    printf("[INFO]: v_mount: %llx (%llx)\n", v_mount, v_mount - kaslr_slide);
-    
-    uint32_t v_flag = kread_uint32(v_mount + 0x71);
-    printf("[INFO]: v_flag: %x (%llx)\n", v_flag, v_flag - kaslr_slide);
-    
-    kwrite_uint32(v_mount + 0x71, v_flag & ~(1 << 6));
-    
-    
-    get_root(getpid()); // set our uid
-    
-    return ret;
+    close(fd);
+    printf("Did we mount / as read+write? %s\n", [[NSFileManager defaultManager] fileExistsAtPath:@"/RWTEST"] ? "yes" : "no");
 }

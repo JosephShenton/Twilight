@@ -7,7 +7,6 @@
 //  Copyright © 2017 xerub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #include <assert.h>
 #include <stdint.h>
 #include <string.h>
@@ -614,6 +613,7 @@ term_kernel(void)
 #define INSN_CALL 0x94000000, 0xFC000000
 #define INSN_B    0x14000000, 0xFC000000
 #define INSN_CBZ  0x34000000, 0xFC000000
+#define INSN_ADRP 0x90000000, 0x9F000000
 
 addr_t
 find_register_value(addr_t where, int reg)
@@ -802,42 +802,6 @@ addr_t find_bcopy(void) {
 uint64_t find_rootvnode(void) {
     // Find the first reference to the string
     addr_t ref = find_strref("/var/run/.vfs_rsrc_streams_%p%x", 1, 0);
-    if (!ref) {
-        return 0;
-    }
-    ref -= kerndumpbase;
-    
-    uint64_t start = bof64(kernel, xnucore_base, ref);
-    if (!start) {
-        return 0;
-    }
-    
-    // Find MOV X9, #0x2000000000 - it's a pretty distinct instruction
-    addr_t weird_instruction = 0;
-    for (int i = 4; i < 4*0x100; i+=4) {
-        uint32_t op = *(uint32_t *)(kernel + ref - i);
-        if (op == 0xB25B03E9) {
-            weird_instruction = ref-i;
-            break;
-        }
-    }
-    if (!weird_instruction) {
-        return 0;
-    }
-    
-    uint64_t val = calc64(kernel, start, weird_instruction, 8);
-    if (!val) {
-        return 0;
-    }
-    
-    return val + kerndumpbase;
-}
-
-uint64_t getVnodeAtPath(char *path) {
-    // Find the first reference to the string
-    NSString *path2 = [NSString stringWithFormat:@"%@", path];
-    addr_t ref = find_strref("%s/.vfs_rsrc_streams_%p%x", 1, 0);
-    
     if (!ref) {
         return 0;
     }

