@@ -1567,7 +1567,7 @@
         <!--Tweak Applicator-->
         <scene sceneID="rC2-4e-NY2">
             <objects>
-                <tableViewController id="Ouo-jV-ZkZ" customClass="ScreenResolutionTableViewController" sceneMemberID="viewController">
+                <tableViewController id="Ouo-jV-ZkZ" customClass="PlusifyTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Udh-e2-chc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,6 +11,7 @@
 		FE33CFF620CC8EB100FD26E5 /* GKActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEF20CC8EB100FD26E5 /* GKActionSheetPicker.m */; };
 		FE33CFF820CC8EB100FD26E5 /* GKActionSheetPickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */; };
 		FE33CFFA20CC8EB100FD26E5 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = FE33CFF520CC8EB100FD26E5 /* countries.json */; };
+		FE33CFFD20CCAB3200FD26E5 /* PlusifyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFFC20CCAB3200FD26E5 /* PlusifyTableViewController.m */; };
 		FE5C151B20C9F18200F977A7 /* carrier.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5C151A20C9F18200F977A7 /* carrier.png */; };
 		FE5C152120C9F29C00F977A7 /* drill-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5C152020C9F29C00F977A7 /* drill-filled.png */; };
 		FE5C152320C9F44D00F977A7 /* badges.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5C152220C9F44B00F977A7 /* badges.png */; };
@@ -68,6 +69,8 @@
 		FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKActionSheetPickerItem.m; sourceTree = "<group>"; };
 		FE33CFF220CC8EB100FD26E5 /* GKActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActionSheetPicker.h; sourceTree = "<group>"; };
 		FE33CFF520CC8EB100FD26E5 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		FE33CFFB20CCAB3200FD26E5 /* PlusifyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlusifyTableViewController.h; sourceTree = "<group>"; };
+		FE33CFFC20CCAB3200FD26E5 /* PlusifyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlusifyTableViewController.m; sourceTree = "<group>"; };
 		FE5C151A20C9F18200F977A7 /* carrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrier.png; sourceTree = "<group>"; };
 		FE5C152020C9F29C00F977A7 /* drill-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drill-filled.png"; sourceTree = "<group>"; };
 		FE5C152220C9F44B00F977A7 /* badges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badges.png; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				FEE367F220CA6CC400B4AB55 /* BadgeColorTableViewController.m */,
 				FE33CFE920CC8C5100FD26E5 /* ScreenResolutionTableViewController.h */,
 				FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */,
+				FE33CFFB20CCAB3200FD26E5 /* PlusifyTableViewController.h */,
+				FE33CFFC20CCAB3200FD26E5 /* PlusifyTableViewController.m */,
 			);
 			name = "Tweak Applicators";
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 				FEDA149920CA488400EB4442 /* SCLButton.m in Sources */,
 				FEDA149720CA488400EB4442 /* SCLTextView.m in Sources */,
 				FE33CFF820CC8EB100FD26E5 /* GKActionSheetPickerItem.m in Sources */,
+				FE33CFFD20CCAB3200FD26E5 /* PlusifyTableViewController.m in Sources */,
 				FEDA149A20CA488400EB4442 /* UIImage+ImageEffects.m in Sources */,
 				FEDA149520CA488400EB4442 /* SCLAlertViewStyleKit.m in Sources */,
 				FE5C155320CA1D9500F977A7 /* kern_utils.m in Sources */,
