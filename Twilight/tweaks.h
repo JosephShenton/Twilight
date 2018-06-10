@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 NSString* setCarrierName(NSString *new_name);
 kern_return_t setCustomHosts(boolean_t use_custom);
 NSString* setBadgeColor(const char *color_raw, const char *size_type);
+NSString* changeScreenResolutions (int width, int height);
 @end
 
 NS_ASSUME_NONNULL_END

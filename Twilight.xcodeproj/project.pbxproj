@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE33CFEB20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */; };
+		FE33CFF620CC8EB100FD26E5 /* GKActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEF20CC8EB100FD26E5 /* GKActionSheetPicker.m */; };
+		FE33CFF820CC8EB100FD26E5 /* GKActionSheetPickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */; };
+		FE33CFFA20CC8EB100FD26E5 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = FE33CFF520CC8EB100FD26E5 /* countries.json */; };
 		FE5C151B20C9F18200F977A7 /* carrier.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5C151A20C9F18200F977A7 /* carrier.png */; };
 		FE5C152120C9F29C00F977A7 /* drill-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5C152020C9F29C00F977A7 /* drill-filled.png */; };
 		FE5C152320C9F44D00F977A7 /* badges.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5C152220C9F44B00F977A7 /* badges.png */; };
@@ -57,6 +61,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE33CFE920CC8C5100FD26E5 /* ScreenResolutionTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenResolutionTableViewController.h; sourceTree = "<group>"; };
+		FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenResolutionTableViewController.m; sourceTree = "<group>"; };
+		FE33CFEE20CC8EB100FD26E5 /* GKActionSheetPickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActionSheetPickerItem.h; sourceTree = "<group>"; };
+		FE33CFEF20CC8EB100FD26E5 /* GKActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKActionSheetPicker.m; sourceTree = "<group>"; };
+		FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKActionSheetPickerItem.m; sourceTree = "<group>"; };
+		FE33CFF220CC8EB100FD26E5 /* GKActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActionSheetPicker.h; sourceTree = "<group>"; };
+		FE33CFF520CC8EB100FD26E5 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		FE5C151A20C9F18200F977A7 /* carrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrier.png; sourceTree = "<group>"; };
 		FE5C152020C9F29C00F977A7 /* drill-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drill-filled.png"; sourceTree = "<group>"; };
 		FE5C152220C9F44B00F977A7 /* badges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badges.png; sourceTree = "<group>"; };
@@ -130,7 +141,7 @@
 		FEFCC4D820CA1DEF0062E025 /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		FEFCC4D920CA1DEF0062E025 /* kmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
 		FEFCC4DA20CA1DEF0062E025 /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
-		FEFCC4DB20CA1DEF0062E025 /* sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sploit.c; path = "../../../Downloads/multi_path-master/multi_path/sploit.c"; sourceTree = "<group>"; };
+		FEFCC4DB20CA1DEF0062E025 /* sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sploit.c; sourceTree = "<group>"; };
 		FEFCC4DC20CA1DF00062E025 /* sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sploit.h; sourceTree = "<group>"; };
 		FEFCC4DF20CA1E2E0062E025 /* ExploitingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExploitingViewController.h; sourceTree = "<group>"; };
 		FEFCC4E020CA1E2E0062E025 /* ExploitingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploitingViewController.m; sourceTree = "<group>"; };
@@ -149,6 +160,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE33CFEC20CC8EB100FD26E5 /* GKActionSheetPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FE33CFED20CC8EB100FD26E5 /* Classes */,
+				FE33CFF320CC8EB100FD26E5 /* Assets */,
+			);
+			path = GKActionSheetPicker;
+			sourceTree = "<group>";
+		};
+		FE33CFED20CC8EB100FD26E5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FE33CFEE20CC8EB100FD26E5 /* GKActionSheetPickerItem.h */,
+				FE33CFEF20CC8EB100FD26E5 /* GKActionSheetPicker.m */,
+				FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */,
+				FE33CFF220CC8EB100FD26E5 /* GKActionSheetPicker.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FE33CFF320CC8EB100FD26E5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FE33CFF520CC8EB100FD26E5 /* countries.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		FE5C151920C9F17700F977A7 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +218,8 @@
 				FE5C153520CA132B00F977A7 /* CarrierNameTableViewController.m */,
 				FEE367F120CA6CC400B4AB55 /* BadgeColorTableViewController.h */,
 				FEE367F220CA6CC400B4AB55 /* BadgeColorTableViewController.m */,
+				FE33CFE920CC8C5100FD26E5 /* ScreenResolutionTableViewController.h */,
+				FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */,
 			);
 			name = "Tweak Applicators";
 			sourceTree = "<group>";
@@ -199,6 +240,7 @@
 		FE5C154020CA1D0A00F977A7 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				FE33CFEC20CC8EB100FD26E5 /* GKActionSheetPicker */,
 				FEDA148220CA488400EB4442 /* SCLAlertView */,
 				FEFCC4E620CA20B30062E025 /* Segues */,
 				FE5C151920C9F17700F977A7 /* images */,
@@ -408,6 +450,7 @@
 				FE5D2F9220CA2AA900995B65 /* twilight_updates.jpg in Resources */,
 				FEF3268C20C9DDD800CD752D /* LaunchScreen.storyboard in Resources */,
 				FE5C153C20CA184600F977A7 /* carrier_screenshot.png in Resources */,
+				FE33CFFA20CC8EB100FD26E5 /* countries.json in Resources */,
 				FE5C152120C9F29C00F977A7 /* drill-filled.png in Resources */,
 				FEF3268920C9DDD800CD752D /* Assets.xcassets in Resources */,
 				FE5C153E20CA1A9600F977A7 /* badges_screenshot.png in Resources */,
@@ -439,10 +482,12 @@
 				FEF3269820C9E4A400CD752D /* HomeTableViewController.m in Sources */,
 				FEDA149920CA488400EB4442 /* SCLButton.m in Sources */,
 				FEDA149720CA488400EB4442 /* SCLTextView.m in Sources */,
+				FE33CFF820CC8EB100FD26E5 /* GKActionSheetPickerItem.m in Sources */,
 				FEDA149A20CA488400EB4442 /* UIImage+ImageEffects.m in Sources */,
 				FEDA149520CA488400EB4442 /* SCLAlertViewStyleKit.m in Sources */,
 				FE5C155320CA1D9500F977A7 /* kern_utils.m in Sources */,
 				FE5C153A20CA135300F977A7 /* utilities.m in Sources */,
+				FE33CFF620CC8EB100FD26E5 /* GKActionSheetPicker.m in Sources */,
 				FEE367F020CA6BDF00B4AB55 /* ExploitFailedViewController.m in Sources */,
 				FE5D2F9720CA33CA00995B65 /* tweaks.m in Sources */,
 				FEFCC4E120CA1E2E0062E025 /* ExploitingViewController.m in Sources */,
@@ -456,6 +501,7 @@
 				FEE367F320CA6CC400B4AB55 /* BadgeColorTableViewController.m in Sources */,
 				FEFCC4DD20CA1DF00062E025 /* offsets.m in Sources */,
 				FEDA149620CA488400EB4442 /* SCLAlertViewResponder.m in Sources */,
+				FE33CFEB20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m in Sources */,
 				FE5C155120CA1D9500F977A7 /* offsetof.c in Sources */,
 				FEFCC4DE20CA1DF00062E025 /* sploit.c in Sources */,
 			);
