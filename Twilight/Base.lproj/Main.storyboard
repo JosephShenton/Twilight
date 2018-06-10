@@ -1772,7 +1772,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Tweak Applicator" id="srH-vh-m7u"/>
                     <connections>
-                        <outlet property="currentResolution" destination="uSp-Mx-f32" id="bGS-Ak-Z0q"/>
                         <outlet property="plusifyStatus" destination="uSp-Mx-f32" id="QCn-en-ev4"/>
                     </connections>
                 </tableViewController>
