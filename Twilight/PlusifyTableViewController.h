@@ -14,6 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PlusifyTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UILabel *plusifyStatus;
 
 @end
 
