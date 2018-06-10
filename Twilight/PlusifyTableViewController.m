@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //    751x1334
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"plusify"]) {
+        self.plusifyStatus.text = @"Enabled";
+    } else {
+        self.plusifyStatus.text = @"Disabled";
+    }
 }
 
 

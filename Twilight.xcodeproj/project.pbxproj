@@ -37,6 +37,7 @@
 		FE5D2F9220CA2AA900995B65 /* twilight_updates.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5D2F9120CA2AA400995B65 /* twilight_updates.jpg */; };
 		FE5D2F9420CA2D5A00995B65 /* ads.png in Resources */ = {isa = PBXBuildFile; fileRef = FE5D2F9320CA2D5500995B65 /* ads.png */; };
 		FE5D2F9720CA33CA00995B65 /* tweaks.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5D2F9620CA33CA00995B65 /* tweaks.m */; };
+		FEA5934620CCAEA200B76462 /* plusify.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA5934520CCAE9E00B76462 /* plusify.png */; };
 		FEDA149420CA488400EB4442 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148420CA488400EB4442 /* SCLTimerDisplay.m */; };
 		FEDA149520CA488400EB4442 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148620CA488400EB4442 /* SCLAlertViewStyleKit.m */; };
 		FEDA149620CA488400EB4442 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148A20CA488400EB4442 /* SCLAlertViewResponder.m */; };
@@ -107,6 +108,7 @@
 		FE5D2F9320CA2D5500995B65 /* ads.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ads.png; sourceTree = "<group>"; };
 		FE5D2F9520CA33CA00995B65 /* tweaks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tweaks.h; sourceTree = "<group>"; };
 		FE5D2F9620CA33CA00995B65 /* tweaks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tweaks.m; sourceTree = "<group>"; };
+		FEA5934520CCAE9E00B76462 /* plusify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusify.png; sourceTree = "<group>"; };
 		FEDA148320CA488400EB4442 /* SCLSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLSwitchView.h; sourceTree = "<group>"; };
 		FEDA148420CA488400EB4442 /* SCLTimerDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTimerDisplay.m; sourceTree = "<group>"; };
 		FEDA148520CA488400EB4442 /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		FE5C151920C9F17700F977A7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FEA5934520CCAE9E00B76462 /* plusify.png */,
 				FE5D2F9320CA2D5500995B65 /* ads.png */,
 				FE5D2F9120CA2AA400995B65 /* twilight_updates.jpg */,
 				FE5D2F8F20CA27B800995B65 /* twilightupdates.png */,
@@ -464,6 +467,7 @@
 				FE5C152F20CA0AEA00F977A7 /* screenresolution.png in Resources */,
 				FEFCC4E520CA1F810062E025 /* macOSMojaveNight.jpg in Resources */,
 				FE5C151B20C9F18200F977A7 /* carrier.png in Resources */,
+				FEA5934620CCAEA200B76462 /* plusify.png in Resources */,
 				FEF3268720C9DDD300CD752D /* Main.storyboard in Resources */,
 				FE5C152B20CA06D800F977A7 /* TwilightLogo.png in Resources */,
 				FE5C152320C9F44D00F977A7 /* badges.png in Resources */,

@@ -74,10 +74,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macOSMojaveNight.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8iJ-M3-3ce">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exploiting multi_path" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbm-Vn-BrH">
-                                <rect key="frame" x="105" y="355" width="165" height="68"/>
+                                <rect key="frame" x="105" y="372" width="165" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="165" id="LW6-Xy-vcR"/>
                                     <constraint firstAttribute="height" constant="68" id="eVS-lC-qpw"/>
@@ -87,7 +87,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ogE-Ue-wDc">
-                                <rect key="frame" x="169" y="431" width="37" height="37"/>
+                                <rect key="frame" x="169" y="448" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -569,7 +569,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenresolution.png" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-zC-npO">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusify.png" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-zC-npO">
                                                     <rect key="frame" x="16" y="6" width="32" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="32" id="CpX-Ho-vR7"/>
@@ -589,7 +589,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disabled" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sd8-Hq-QjQ">
-                                                    <rect key="frame" x="274" y="11" width="67" height="21"/>
+                                                    <rect key="frame" x="274" y="10.999999999999998" width="67" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.3803921569" green="0.38431372549999998" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1601,7 +1601,7 @@
                                                     <color key="textColor" red="0.3803921569" green="0.38431372549999998" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenresolution.png" translatesAutoresizingMaskIntoConstraints="NO" id="pmG-EF-egd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusify.png" translatesAutoresizingMaskIntoConstraints="NO" id="pmG-EF-egd">
                                                     <rect key="frame" x="16" y="12" width="86" height="86"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="86" id="7SU-OZ-9vZ"/>
@@ -1773,6 +1773,7 @@
                     <navigationItem key="navigationItem" title="Tweak Applicator" id="srH-vh-m7u"/>
                     <connections>
                         <outlet property="currentResolution" destination="uSp-Mx-f32" id="bGS-Ak-Z0q"/>
+                        <outlet property="plusifyStatus" destination="uSp-Mx-f32" id="QCn-en-ev4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3uR-Ne-THe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1789,6 +1790,7 @@
         <image name="carrier_screenshot.png" width="750" height="1334"/>
         <image name="emoji.png" width="1536" height="1536"/>
         <image name="macOSMojaveNight.jpg" width="5120" height="2880"/>
+        <image name="plusify.png" width="1536" height="1536"/>
         <image name="revokes.png" width="1536" height="1536"/>
         <image name="screenresolution.png" width="1536" height="1536"/>
         <image name="tweaks" width="25" height="25"/>
