@@ -10,6 +10,7 @@
 #include "utilities.h"
 #include "tweaks.h"
 #include "SCLAlertView/SCLAlertView.h"
+#include "devices.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,5 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *plusifyStatus;
 
 @end
+
+static NSDictionary *resolutions;
 
 NS_ASSUME_NONNULL_END

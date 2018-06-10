@@ -12,6 +12,7 @@
 #include "utilities.h"
 #include "tweaks.h"
 #include "SCLAlertView/SCLAlertView.h"
+#include "devices.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

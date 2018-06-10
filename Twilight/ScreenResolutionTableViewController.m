@@ -43,10 +43,10 @@
         self.actionSheetPicker = [GKActionSheetPicker stringPickerWithItems:items selectCallback:^(id selected) {
             NSLog(@"Selected resolution: %@", selected);
             self.setNextResolution.text = selected;
-            [[NSUserDefaults standardUserDefaults] setObject:selected forKey:@"currentResolution"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"customResolution"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+//            [[NSUserDefaults standardUserDefaults] setObject:selected forKey:@"currentResolution"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"customResolution"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
         } cancelCallback:nil];
     
         [self.actionSheetPicker presentPickerOnView:self.view];
@@ -54,21 +54,47 @@
 
 - (IBAction)applyTweak:(id)sender {
     
-    NSString *selected = self.setNextResolution.text;
-    NSString *resolution = resolutions[selected];
+    if ([[devices deviceName] containsString:@"iPod"] || [[devices deviceName] containsString:@"iPad"]) {
+        SCLAlertView *alert = [[SCLAlertView alloc] init];
+        [alert showSuccess:self title:@"Not compatible" subTitle:[NSString stringWithFormat:@"Sorry, however this tweak doesn't support the %@. Sorry about that.", [devices deviceName]] closeButtonTitle:@"Ok" duration:0.0f];
+    } else {
+        NSString *selected = self.setNextResolution.text;
+        NSString *resolution = resolutions[selected];
+        
+        NSArray *widthHeight = [resolution componentsSeparatedByString:@"x"];
+        
+        NSLog(@"[INFO]: Width: %@, Height: %@", widthHeight[0], widthHeight[1]);
+        
+        
+        if ([changeScreenResolutions((int)[widthHeight[0] integerValue], (int)[widthHeight[1] integerValue]) isEqual: @"reboot"]) {
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            [alert addTimerToButtonIndex:0 reverse:YES];
+            [alert alertIsDismissed:^{
+                rebootDevice();
+            }];
+            [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 6 seconds!" closeButtonTitle:@"Reboot" duration:6.0f];
+        }
+    }
+}
+
+- (IBAction)uninstallTweak:(id)sender {
+    
+    NSString *resolution = resolutions[[devices deviceName]];
     
     NSArray *widthHeight = [resolution componentsSeparatedByString:@"x"];
     
     NSLog(@"[INFO]: Width: %@, Height: %@", widthHeight[0], widthHeight[1]);
     
     
-    if ([changeScreenResolutions((int)[widthHeight[0] integerValue], (int)[widthHeight[1] integerValue]) isEqual: @"reboot"]) {
+    if ([changeScreenResolutions(751, 1334) isEqual: @"reboot"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"plusify"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         SCLAlertView *alert = [[SCLAlertView alloc] init];
         [alert addTimerToButtonIndex:0 reverse:YES];
         [alert alertIsDismissed:^{
             rebootDevice();
         }];
-        [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 6 seconds!" closeButtonTitle:@"Reboot" duration:6.0f];
+        [alert showSuccess:self title:@"Success" subTitle:@"Your device will now reboot in 10 seconds!" closeButtonTitle:@"Reboot" duration:10.0f];
     }
 }
 

@@ -141,7 +141,7 @@ kern_return_t copy_file(char * source_path, char * destination_path, int uid, in
         return KERN_FAILURE;
     }
     
-    
+    printf("[INFO]: Successfully copied files.");
     return KERN_SUCCESS;
 }
 
