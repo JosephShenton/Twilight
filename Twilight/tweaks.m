@@ -361,9 +361,11 @@ int bc(const char *colour, BOOL transparent) {
     int read_fd = open("/private/var/mobile/Documents/IconBadgeBackground_Twilight.cpbitmap", O_RDONLY, 0);
     int write_fd = open("/private/var/mobile/Library/Caches/MappedImageCache/Persistent/SBIconBadgeView.BadgeBackground.cpbitmap", O_RDWR | O_CREAT | O_APPEND, 0777);
     if(fdopen(read_fd, "r") == NULL) {
+        printf("[read_fd]");
         return -1;
     }
     if(fdopen(write_fd, "wb") == NULL) {
+        printf("[write_fd]");
         return -1;
     }
     FILE *read_f = fdopen(read_fd, "r");

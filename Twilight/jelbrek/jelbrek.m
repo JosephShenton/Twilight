@@ -87,7 +87,7 @@ BOOL get_root(pid_t pid) {
 }
 
 
-void remount(){
+void remount() {
     uint64_t _rootvnode = find_rootvnode();
     uint64_t rootfs_vnode = kread64(_rootvnode);
     uint64_t v_mount = kread64(rootfs_vnode + offsetof_v_mount);

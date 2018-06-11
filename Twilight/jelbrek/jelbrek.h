@@ -5,3 +5,4 @@ kern_return_t trust_bin(const char *path);
 BOOL unsandbox(pid_t pid);
 void empower(pid_t pid);
 BOOL get_root(pid_t pid);
+void remount();
