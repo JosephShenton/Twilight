@@ -297,7 +297,7 @@ int setBadgeColor(const char *color_raw, BOOL transparent, float transparency) {
     
     unsigned int rgb = 0;
     [[NSScanner scannerWithString:
-      [[[NSString stringWithFormat:@"%s", color_raw] uppercaseString] stringByTrimmingCharactersInSet:
+      [[[NSString stringWithFormat:@"%@", color_raw_fixed] uppercaseString] stringByTrimmingCharactersInSet:
        [[NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"] invertedSet]]]
      scanHexInt:&rgb];
     
