@@ -14,7 +14,7 @@
 
 @implementation BadgeColorTableViewController
 
-@synthesize currentBadgeColor, updatedBadgeColor;
+@synthesize currentBadgeColor, updatedBadgeColor, opacityNumber;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +35,7 @@
         SCLAlertView *alert = [[SCLAlertView alloc] init];
         [alert showError:self title:@"Error" subTitle:@"Please enter a new badge color hex (E.G. #000000) and try again!" closeButtonTitle:@"OK" duration:0.0f];
     } else {
-        int ret = setBadgeColor([updatedBadgeColor.text UTF8String], FALSE);
+        int ret = setBadgeColor([updatedBadgeColor.text UTF8String], TRUE, [opacityNumber.text floatValue]);
         if (ret == 1) {
             NSFileManager *fileManager = [NSFileManager defaultManager];
             

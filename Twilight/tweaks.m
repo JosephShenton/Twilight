@@ -241,7 +241,7 @@ kern_return_t setCustomHosts(boolean_t use_custom) {
 //
 //}
 
-int setBadgeColor(const char *color_raw, BOOL transparent) {
+int setBadgeColor(const char *color_raw, BOOL transparent, float transparency) {
     
     UIImage *badge;
     NSString *file_name;
@@ -304,7 +304,7 @@ int setBadgeColor(const char *color_raw, BOOL transparent) {
     UIColor *uiColor = [UIColor colorWithRed:((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0
                                        green:((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0
                                         blue:((CGFloat)(rgb & 0xFF)) / 255.0
-                                       alpha:1.0];
+                                       alpha:transparency];
     CGRect rect = CGRectMake(0, 0, badge.size.width, badge.size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
