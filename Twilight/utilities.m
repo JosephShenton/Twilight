@@ -39,7 +39,7 @@ NSString* getPathForDir(NSString *dir_name) {
     if(![fm fileExistsAtPath:final_path isDirectory:&isDir])
     {
         if([fm createDirectoryAtPath:final_path withIntermediateDirectories:YES attributes:nil error:nil])
-            printf("[INFO]: created houdini dir with name: %s\n", [dir_name UTF8String]);
+            printf("[INFO]: created dir with name: %s\n", [dir_name UTF8String]);
         else
             printf("[ERROR]: could not create dir with name: %s\n", [dir_name UTF8String]);
     }
