@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BadgeColorTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *currentBadgeColor;
 @property (weak, nonatomic) IBOutlet UITextField *updatedBadgeColor;
+@property (weak, nonatomic) IBOutlet UITextField *opacityNumber;
 
 @end
 

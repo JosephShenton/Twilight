@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#include "IOKit/IOKitLib.h"
 
 #define INSTALLED_APPS_PATH "/private/var/containers/Bundle/Application"
 #define APPS_DATA_PATH "/private/var/mobile/Containers/Data/Application"
@@ -50,13 +51,14 @@ NSString* getPathForDir(NSString *dir_name);
 kern_return_t set_file_permissions (char * destination_path, int uid, int gid, int perm_num, bool silent);
 kern_return_t copy_file(char * source_path, char * destination_path, int uid, int gid, int num_perm, bool silent);
 NSString* dir_for_path(NSString *dir_name);
-pid_t pid_for_name(char *name);
+//pid_t pid_for_name(char *name);
 UIImage *change_image_tint_to(UIImage *src_image, UIColor *color);
 UIImage *get_image_for_radius(int radius, int width, int height);
 void kill_springboard(int);
 void invalidate_icon_cache(char *);
 void rebootDevice(void);
 void respringDevice(void);
+void ECID(void);
 @end
 
 NS_ASSUME_NONNULL_END

@@ -67,15 +67,42 @@
         
         
         if ([changeScreenResolutions((int)[widthHeight[0] integerValue], (int)[widthHeight[1] integerValue]) isEqual: @"reboot"]) {
-            NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+            NSFileManager *fileManager = [NSFileManager defaultManager];
             
-            NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
-            // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
-            // NSLog(@"current install status is %@", installStatus);
+            NSString *pathForFile = @"/var/Twilight.plist";
             
-            [tweaks setValue:selected forKey: @"ScreenResolution"];
+            if (![fileManager fileExistsAtPath:pathForFile]) {
+                
+            }
             
-            [tweaks writeToFile:pathForFile atomically: YES];
+            NSMutableDictionary *data;
+            
+            if ([fileManager fileExistsAtPath:pathForFile]) {
+                data = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+            }
+            else {
+                data = [[NSMutableDictionary alloc] init];
+            }
+            
+            if ([data objectForKey:@"ScreenResolution"] != nil) {
+                //To insert the data into the plist
+                [data setValue:selected forKey:@"ScreenResolution"];
+                [data writeToFile:pathForFile atomically:YES];
+                
+                //To retrieve the data from the plist
+                NSMutableDictionary *savedValue = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                NSString *value = [savedValue objectForKey:@"ScreenResolution"];
+                NSLog(@"%@",value);
+            } else {
+                //To insert the data into the plist
+                [data setValue:selected forKey:@"ScreenResolution"];
+                [data writeToFile:pathForFile atomically:YES];
+                
+                //To retrieve the data from the plist
+                NSMutableDictionary *savedValue = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                NSString *value = [savedValue objectForKey:@"ScreenResolution"];
+                NSLog(@"%@",value);
+            }
             
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             [alert addTimerToButtonIndex:0 reverse:YES];

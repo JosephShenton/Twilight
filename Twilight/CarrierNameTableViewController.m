@@ -44,15 +44,42 @@
         NSString *carrier = setCarrierName(carrierNameNew.text);
         if ([carrier  isEqual: @"reboot"]) {
             
-            NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+            NSFileManager *fileManager = [NSFileManager defaultManager];
             
-            NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
-            // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
-            // NSLog(@"current install status is %@", installStatus);
+            NSString *pathForFile = @"/var/Twilight.plist";
             
-            [tweaks setValue:carrierNameNew.text forKey: @"CustomCarrier"];
+            if (![fileManager fileExistsAtPath:pathForFile]) {
+                
+            }
             
-            [tweaks writeToFile:pathForFile atomically: YES];
+            NSMutableDictionary *data;
+            
+            if ([fileManager fileExistsAtPath:pathForFile]) {
+                data = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+            }
+            else {
+                data = [[NSMutableDictionary alloc] init];
+            }
+            
+            if ([data objectForKey:@"CustomCarrier"] != nil) {
+                //To insert the data into the plist
+                [data setValue:@"Enabled" forKey:@"CustomCarrier"];
+                [data writeToFile:pathForFile atomically:YES];
+                
+                //To retrieve the data from the plist
+                NSMutableDictionary *savedValue = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                NSString *value = [savedValue objectForKey:@"CustomCarrier"];
+                NSLog(@"%@",value);
+            } else {
+                //To insert the data into the plist
+                [data setObject:@"Enabled" forKey:@"CustomCarrier"];
+                [data writeToFile:pathForFile atomically:YES];
+                
+                //To retrieve the data from the plist
+                NSMutableDictionary *savedValue = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                NSString *value = [savedValue objectForKey:@"CustomCarrier"];
+                NSLog(@"%@",value);
+            }
             
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             [alert addTimerToButtonIndex:0 reverse:YES];
