@@ -189,24 +189,115 @@ kern_return_t setCustomHosts(boolean_t use_custom) {
     return ret;
 }
 
-NSString* setBadgeColor(const char *color_raw, const char *size_type) {
+//NSString* setBadgeColor(const char *color_raw, const char *size_type) {
+//
+//    UIImage *badge;
+//    NSString *file_name;
+//
+//    NSString *color_raw_fixed = [[[NSString stringWithFormat:@"%s", color_raw] uppercaseString] stringByReplacingOccurrencesOfString:@"#" withString:@""];
+//
+//    if (strcmp("2x", size_type) == 0) {
+//        badge = get_image_for_radius(12, 24, 24);
+//        file_name = @"SBBadgeBG@2x.png";
+//    } else if (strcmp("3x", size_type) == 0) {
+//        badge = get_image_for_radius(24, 48, 48);
+//        file_name = @"SBBadgeBG@3x.png";
+//    }
+//
+//    unsigned int rgb = 0;
+//    [[NSScanner scannerWithString:
+//      [[[NSString stringWithFormat:@"%@", color_raw_fixed] uppercaseString] stringByTrimmingCharactersInSet:
+//       [[NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"] invertedSet]]]
+//     scanHexInt:&rgb];
+//
+//    UIColor *uiColor = [UIColor colorWithRed:((CGFloat)((rgb & 0xFF0000) >> 16)) / 255.0
+//                                       green:((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0
+//                                        blue:((CGFloat)(rgb & 0xFF)) / 255.0
+//                                       alpha:1.0];
+//    badge = change_image_tint_to(badge, uiColor);
+//
+//
+//    // iOS 11, save as png and copy to SpringBoard (EDIT: 11 now stores files in Assets.car :( )
+//    // iOS 10, save as cpbitmap and copy to Caches
+//    //    if ([[[UIDevice currentDevice] systemVersion] containsString:@"11"]) {
+//    //
+//    //        NSString *saved_png_path = [NSString stringWithFormat:@"%@/%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject], file_name];
+//    //
+//    //        NSData *image_data = UIImagePNGRepresentation(badge);
+//    //        [image_data writeToFile:saved_png_path atomically:YES];
+//    //
+//    //
+//    //        copy_file(strdup([saved_png_path UTF8String]), strdup([[@"/System/Library/CoreServices/SpringBoard.app/" stringByAppendingString:file_name] UTF8String]), MOBILE_UID, MOBILE_GID, 0666);
+//    //
+//    //    } else {
+//    NSString *saved_cpbitmap_path = [NSString stringWithFormat:@"%@/SBIconBadgeView.BadgeBackground.cpbitmap", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
+//
+//    [badge writeToCPBitmapFile:saved_cpbitmap_path flags:1];
+//
+//    copy_file(strdup([saved_cpbitmap_path UTF8String]), "/var/mobile/Library/Caches/MappedImageCache/Persistent/SBIconBadgeView.BadgeBackground.cpbitmap", MOBILE_UID, MOBILE_GID, 0666, NO);
+//    //    }
+//
+//    return @"reboot";
+//
+//}
+
+int setBadgeColor(const char *color_raw, BOOL transparent) {
     
     UIImage *badge;
     NSString *file_name;
     
     NSString *color_raw_fixed = [[[NSString stringWithFormat:@"%s", color_raw] uppercaseString] stringByReplacingOccurrencesOfString:@"#" withString:@""];
     
-    if (strcmp("2x", size_type) == 0) {
-        badge = get_image_for_radius(12, 24, 24);
-        file_name = @"SBBadgeBG@2x.png";
-    } else if (strcmp("3x", size_type) == 0) {
-        badge = get_image_for_radius(24, 48, 48);
-        file_name = @"SBBadgeBG@3x.png";
+    printf("size: %i\n", size());
+    if (size() == 2) {
+        UIGraphicsBeginImageContextWithOptions(CGRectMake(0, 0, 24, 24).size, NO, 0.0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
+        CGRect size;
+        if (transparent == FALSE) {
+            size =  CGRectMake(0, 0, 24, 24);
+        } else {
+            size = CGRectMake(0, 0, 0, 0);
+        }
+        CGContextFillRect(context, size);
+        badge = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(24.0, 24.0), NO, 0.0);
+        CGRect bounds=(CGRect){CGPointZero, CGSizeMake(24.0, 24.0)};
+        [[UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:12.0f] addClip];
+        [badge drawInRect:bounds];
+        badge = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    } else if (size() == 3) {
+        //UIGraphicsBeginImageContextWithOptions(CGRectMake(0, 0, 48, 48).size, NO, 0.0);
+        UIGraphicsBeginImageContextWithOptions(CGRectMake(0, 0, 24, 24).size, NO, 0.0);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, [[UIColor blackColor] CGColor]);
+        CGRect size;
+        if (transparent == FALSE) {
+            size =  CGRectMake(0, 0, 48, 48);
+        } else {
+            size = CGRectMake(0, 0, 0, 0);
+        }
+        CGContextFillRect(context, size);
+        badge = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        //UIGraphicsBeginImageContextWithOptions(CGSizeMake(48.0, 48.0), NO, 0.0);
+        //CGRect bounds=(CGRect){CGPointZero, CGSizeMake(48.0, 48.0)};
+        //[[UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:24.0f] addClip];
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(24.0, 24.0), NO, 0.0);
+        CGRect bounds=(CGRect){CGPointZero, CGSizeMake(24.0, 24.0)};
+        [[UIBezierPath bezierPathWithRoundedRect:bounds cornerRadius:12.0f] addClip];
+        [badge drawInRect:bounds];
+        badge = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    } else {
+        return -2;
     }
     
     unsigned int rgb = 0;
     [[NSScanner scannerWithString:
-      [[[NSString stringWithFormat:@"%@", color_raw_fixed] uppercaseString] stringByTrimmingCharactersInSet:
+      [[[NSString stringWithFormat:@"%s", color_raw] uppercaseString] stringByTrimmingCharactersInSet:
        [[NSCharacterSet characterSetWithCharactersInString:@"0123456789ABCDEF"] invertedSet]]]
      scanHexInt:&rgb];
     
@@ -214,30 +305,21 @@ NSString* setBadgeColor(const char *color_raw, const char *size_type) {
                                        green:((CGFloat)((rgb & 0xFF00) >> 8)) / 255.0
                                         blue:((CGFloat)(rgb & 0xFF)) / 255.0
                                        alpha:1.0];
-    badge = change_image_tint_to(badge, uiColor);
+    CGRect rect = CGRectMake(0, 0, badge.size.width, badge.size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextClipToMask(context, rect, badge.CGImage);
+    CGContextSetFillColorWithColor(context, [uiColor CGColor]);
+    CGContextFillRect(context, rect);
+    badge = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [badge writeToCPBitmapFile:@"/var/mobile/Documents/IconBadgeBackground_Twilight.cpbitmap" flags:1];
     
+    copy_file(strdup([@"/var/mobile/Documents/IconBadgeBackground_Twilight.cpbitmap" UTF8String]), "/var/mobile/Library/Caches/MappedImageCache/Persistent/SBIconBadgeView.BadgeBackground.cpbitmap", MOBILE_UID, MOBILE_GID, 0666, NO);
+    chown("/var/mobile/Library/Caches/MappedImageCache/Persistent/SBIconBadgeView.BadgeBackground.cpbitmap", 501, 501);
+    chmod("/var/mobile/Library/Caches/MappedImageCache/Persistent/SBIconBadgeView.BadgeBackground.cpbitmap", 0666);
     
-    // iOS 11, save as png and copy to SpringBoard (EDIT: 11 now stores files in Assets.car :( )
-    // iOS 10, save as cpbitmap and copy to Caches
-    //    if ([[[UIDevice currentDevice] systemVersion] containsString:@"11"]) {
-    //
-    //        NSString *saved_png_path = [NSString stringWithFormat:@"%@/%@", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject], file_name];
-    //
-    //        NSData *image_data = UIImagePNGRepresentation(badge);
-    //        [image_data writeToFile:saved_png_path atomically:YES];
-    //
-    //
-    //        copy_file(strdup([saved_png_path UTF8String]), strdup([[@"/System/Library/CoreServices/SpringBoard.app/" stringByAppendingString:file_name] UTF8String]), MOBILE_UID, MOBILE_GID, 0666);
-    //
-    //    } else {
-    NSString *saved_cpbitmap_path = [NSString stringWithFormat:@"%@/SBIconBadgeView.BadgeBackground.cpbitmap", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];
-    
-    [badge writeToCPBitmapFile:saved_cpbitmap_path flags:1];
-    
-    copy_file(strdup([saved_cpbitmap_path UTF8String]), "/var/mobile/Library/Caches/MappedImageCache/Persistent/SBIconBadgeView.BadgeBackground.cpbitmap", MOBILE_UID, MOBILE_GID, 0666, NO);
-    //    }
-    
-    return @"reboot";
+    return 1;
     
 }
 

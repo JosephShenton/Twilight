@@ -34,6 +34,7 @@
 		FE94B23420CCFA0C0023CCE9 /* nonce.png in Resources */ = {isa = PBXBuildFile; fileRef = FE94B23320CCFA080023CCE9 /* nonce.png */; };
 		FE94B23620CCFADC0023CCE9 /* shsh2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE94B23520CCFAD20023CCE9 /* shsh2.png */; };
 		FE94B23B20CCFF9A0023CCE9 /* SHSH2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94B23A20CCFF9A0023CCE9 /* SHSH2TableViewController.m */; };
+		FE95659720CE311C009AD8D3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE95659620CE311C009AD8D3 /* IOKit.framework */; };
 		FEA5934620CCAEA200B76462 /* plusify.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA5934520CCAE9E00B76462 /* plusify.png */; };
 		FEA5934920CCC7E900B76462 /* devices.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA5934820CCC7E900B76462 /* devices.m */; };
 		FEB04A1320CDDF700008759B /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB048DE20CDDF680008759B /* offsets.m */; };
@@ -80,6 +81,32 @@
 		FE33CFF520CC8EB100FD26E5 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		FE33CFFB20CCAB3200FD26E5 /* PlusifyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlusifyTableViewController.h; sourceTree = "<group>"; };
 		FE33CFFC20CCAB3200FD26E5 /* PlusifyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlusifyTableViewController.m; sourceTree = "<group>"; };
+		FE55DB4020CE330800A91590 /* IOTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOTypes.h; sourceTree = "<group>"; };
+		FE55DB4120CE330800A91590 /* IOKitKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitKeys.h; sourceTree = "<group>"; };
+		FE55DB4220CE330800A91590 /* IOMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOMessage.h; sourceTree = "<group>"; };
+		FE55DB4320CE330800A91590 /* IOReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReturn.h; sourceTree = "<group>"; };
+		FE55DB4420CE330800A91590 /* OSMessageNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSMessageNotification.h; sourceTree = "<group>"; };
+		FE55DB4620CE330800A91590 /* IOPM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPM.h; sourceTree = "<group>"; };
+		FE55DB4720CE330800A91590 /* IOPMLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPMLib.h; sourceTree = "<group>"; };
+		FE55DB4820CE330800A91590 /* IOPMKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPMKeys.h; sourceTree = "<group>"; };
+		FE55DB4920CE330800A91590 /* IOPMLibDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPMLibDefs.h; sourceTree = "<group>"; };
+		FE55DB4B20CE330800A91590 /* IOPSKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPSKeys.h; sourceTree = "<group>"; };
+		FE55DB4C20CE330800A91590 /* IOUPSPlugIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUPSPlugIn.h; sourceTree = "<group>"; };
+		FE55DB4D20CE330800A91590 /* IOPowerSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOPowerSources.h; sourceTree = "<group>"; };
+		FE55DB4E20CE330800A91590 /* OSKext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKext.h; sourceTree = "<group>"; };
+		FE55DB5020CE330800A91590 /* IOHIDEventSystemClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystemClient.h; sourceTree = "<group>"; };
+		FE55DB5120CE330800A91590 /* IOHIDService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDService.h; sourceTree = "<group>"; };
+		FE55DB5220CE330800A91590 /* IOHIDNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDNotification.h; sourceTree = "<group>"; };
+		FE55DB5320CE330800A91590 /* IOHIDEventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventQueue.h; sourceTree = "<group>"; };
+		FE55DB5420CE330800A91590 /* IOHIDEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEvent.h; sourceTree = "<group>"; };
+		FE55DB5520CE330800A91590 /* IOHIDEventSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventSystem.h; sourceTree = "<group>"; };
+		FE55DB5620CE330800A91590 /* IOHIDEventData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventData.h; sourceTree = "<group>"; };
+		FE55DB5720CE330800A91590 /* IOHIDEventTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDEventTypes.h; sourceTree = "<group>"; };
+		FE55DB5820CE330800A91590 /* IOHIDDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDDisplay.h; sourceTree = "<group>"; };
+		FE55DB5920CE330800A91590 /* IOHIDSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDSession.h; sourceTree = "<group>"; };
+		FE55DB5A20CE330800A91590 /* IOHIDUserDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDUserDevice.h; sourceTree = "<group>"; };
+		FE55DB5B20CE330800A91590 /* IOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKit.h; sourceTree = "<group>"; };
+		FE55DB5C20CE330800A91590 /* IOKitLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
 		FE5C151A20C9F18200F977A7 /* carrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrier.png; sourceTree = "<group>"; };
 		FE5C152020C9F29C00F977A7 /* drill-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drill-filled.png"; sourceTree = "<group>"; };
 		FE5C152220C9F44B00F977A7 /* badges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badges.png; sourceTree = "<group>"; };
@@ -110,6 +137,7 @@
 		FE94B23520CCFAD20023CCE9 /* shsh2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shsh2.png; sourceTree = "<group>"; };
 		FE94B23920CCFF9A0023CCE9 /* SHSH2TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSH2TableViewController.h; sourceTree = "<group>"; };
 		FE94B23A20CCFF9A0023CCE9 /* SHSH2TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSH2TableViewController.m; sourceTree = "<group>"; };
+		FE95659620CE311C009AD8D3 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IOKit.framework; sourceTree = "<group>"; };
 		FEA5934520CCAE9E00B76462 /* plusify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusify.png; sourceTree = "<group>"; };
 		FEA5934720CCC7E900B76462 /* devices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = devices.h; sourceTree = "<group>"; };
 		FEA5934820CCC7E900B76462 /* devices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = devices.m; sourceTree = "<group>"; };
@@ -182,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEB04A1720CDDF700008759B /* qilin.o in Frameworks */,
+				FE95659720CE311C009AD8D3 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +243,63 @@
 				FE33CFF520CC8EB100FD26E5 /* countries.json */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FE55DB3F20CE330800A91590 /* IOKit */ = {
+			isa = PBXGroup;
+			children = (
+				FE55DB4020CE330800A91590 /* IOTypes.h */,
+				FE55DB4120CE330800A91590 /* IOKitKeys.h */,
+				FE55DB4220CE330800A91590 /* IOMessage.h */,
+				FE55DB4320CE330800A91590 /* IOReturn.h */,
+				FE55DB4420CE330800A91590 /* OSMessageNotification.h */,
+				FE55DB4520CE330800A91590 /* pwr_mgt */,
+				FE55DB4A20CE330800A91590 /* ps */,
+				FE55DB4E20CE330800A91590 /* OSKext.h */,
+				FE55DB4F20CE330800A91590 /* hid */,
+				FE55DB5B20CE330800A91590 /* IOKit.h */,
+				FE55DB5C20CE330800A91590 /* IOKitLib.h */,
+			);
+			path = IOKit;
+			sourceTree = "<group>";
+		};
+		FE55DB4520CE330800A91590 /* pwr_mgt */ = {
+			isa = PBXGroup;
+			children = (
+				FE55DB4620CE330800A91590 /* IOPM.h */,
+				FE55DB4720CE330800A91590 /* IOPMLib.h */,
+				FE55DB4820CE330800A91590 /* IOPMKeys.h */,
+				FE55DB4920CE330800A91590 /* IOPMLibDefs.h */,
+			);
+			path = pwr_mgt;
+			sourceTree = "<group>";
+		};
+		FE55DB4A20CE330800A91590 /* ps */ = {
+			isa = PBXGroup;
+			children = (
+				FE55DB4B20CE330800A91590 /* IOPSKeys.h */,
+				FE55DB4C20CE330800A91590 /* IOUPSPlugIn.h */,
+				FE55DB4D20CE330800A91590 /* IOPowerSources.h */,
+			);
+			path = ps;
+			sourceTree = "<group>";
+		};
+		FE55DB4F20CE330800A91590 /* hid */ = {
+			isa = PBXGroup;
+			children = (
+				FE55DB5020CE330800A91590 /* IOHIDEventSystemClient.h */,
+				FE55DB5120CE330800A91590 /* IOHIDService.h */,
+				FE55DB5220CE330800A91590 /* IOHIDNotification.h */,
+				FE55DB5320CE330800A91590 /* IOHIDEventQueue.h */,
+				FE55DB5420CE330800A91590 /* IOHIDEvent.h */,
+				FE55DB5520CE330800A91590 /* IOHIDEventSystem.h */,
+				FE55DB5620CE330800A91590 /* IOHIDEventData.h */,
+				FE55DB5720CE330800A91590 /* IOHIDEventTypes.h */,
+				FE55DB5820CE330800A91590 /* IOHIDDisplay.h */,
+				FE55DB5920CE330800A91590 /* IOHIDSession.h */,
+				FE55DB5A20CE330800A91590 /* IOHIDUserDevice.h */,
+			);
+			path = hid;
 			sourceTree = "<group>";
 		};
 		FE5C151920C9F17700F977A7 /* images */ = {
@@ -261,6 +347,8 @@
 		FE5C153720CA133C00F977A7 /* Global Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FE55DB3F20CE330800A91590 /* IOKit */,
+				FE95659620CE311C009AD8D3 /* IOKit.framework */,
 				FEE367EC20CA6B4900B4AB55 /* RoundedView.swift */,
 				FE5C153120CA126900F977A7 /* UITextField+Placeholder.swift */,
 				FE5C153820CA135300F977A7 /* utilities.h */,
@@ -736,6 +824,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6578A826QL;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Twilight",
+				);
 				INFOPLIST_FILE = Twilight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -761,6 +853,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6578A826QL;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Twilight",
+				);
 				INFOPLIST_FILE = Twilight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

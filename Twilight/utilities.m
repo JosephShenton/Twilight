@@ -712,3 +712,27 @@ UIImage *get_image_for_radius(int radius, int width, int height) {
     
     return rounded_image;
 }
+
+void ECID() {
+    
+    CFMutableDictionaryRef dict = IOServiceMatching("IOPlatformExpertDevice");
+    io_service_t service = IOServiceGetMatchingService(kIOMasterPortDefault, dict);
+    
+    if (service) {
+        CFTypeRef ecid = IORegistryEntrySearchCFProperty(service, kIODeviceTreePlane, CFSTR("unique-chip-id"), kCFAllocatorDefault, kIORegistryIterateRecursively);
+        if (ecid) {
+            const UInt8 *bytes = CFDataGetBytePtr(ecid);
+            UInt64* b = (UInt64*)bytes;
+            CFStringRef ecidString = CFStringCreateWithFormat(kCFAllocatorDefault,NULL,CFSTR("%llu"),*b);
+
+            printf("%s", [(__bridge NSString *)ecidString UTF8String]);
+            CFRelease(ecid);
+            IOObjectRelease(service);
+        } else {
+            printf("[ERROR]: Failed to locate Unique Chip ID Value.");
+        }
+    } else {
+        printf("[ERROR]: Failed to locate platform expert device service.");
+        return;
+    }
+}

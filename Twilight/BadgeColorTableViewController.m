@@ -35,17 +35,44 @@
         SCLAlertView *alert = [[SCLAlertView alloc] init];
         [alert showError:self title:@"Error" subTitle:@"Please enter a new badge color hex (E.G. #000000) and try again!" closeButtonTitle:@"OK" duration:0.0f];
     } else {
-        int ret = bc([updatedBadgeColor.text UTF8String], FALSE);
+        int ret = setBadgeColor([updatedBadgeColor.text UTF8String], FALSE);
         if (ret == 1) {
-            NSString *pathForFile = @"/private/var/.TwilightTweaks.plist";
+            NSFileManager *fileManager = [NSFileManager defaultManager];
             
-            NSMutableDictionary *tweaks = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
-            // NSString* installStatus = (NSString*)[tweaks valueForKey: @"Plusify"];
-            // NSLog(@"current install status is %@", installStatus);
+            NSString *pathForFile = @"/var/Twilight.plist";
             
-            [tweaks setValue:updatedBadgeColor.text forKey: @"BadgeColor"];
+            if (![fileManager fileExistsAtPath:pathForFile]) {
+                
+            }
             
-            [tweaks writeToFile:pathForFile atomically: YES];
+            NSMutableDictionary *data;
+            
+            if ([fileManager fileExistsAtPath:pathForFile]) {
+                data = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+            }
+            else {
+                data = [[NSMutableDictionary alloc] init];
+            }
+            
+            if ([data objectForKey:@"BadgeColor"] != nil) {
+                //To insert the data into the plist
+                [data setValue:updatedBadgeColor.text forKey:@"BadgeColor"];
+                [data writeToFile:pathForFile atomically:YES];
+                
+                //To retrieve the data from the plist
+                NSMutableDictionary *savedValue = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                NSString *value = [savedValue objectForKey:@"BadgeColor"];
+                NSLog(@"%@",value);
+            } else {
+                //To insert the data into the plist
+                [data setValue:updatedBadgeColor.text forKey:@"BadgeColor"];
+                [data writeToFile:pathForFile atomically:YES];
+                
+                //To retrieve the data from the plist
+                NSMutableDictionary *savedValue = [[NSMutableDictionary alloc] initWithContentsOfFile:pathForFile];
+                NSString *value = [savedValue objectForKey:@"BadgeColor"];
+                NSLog(@"%@",value);
+            }
             
             SCLAlertView *alert = [[SCLAlertView alloc] init];
             [alert addTimerToButtonIndex:0 reverse:YES];

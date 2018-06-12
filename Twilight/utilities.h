@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#include "IOKit/IOKitLib.h"
 
 #define INSTALLED_APPS_PATH "/private/var/containers/Bundle/Application"
 #define APPS_DATA_PATH "/private/var/mobile/Containers/Data/Application"
@@ -57,6 +58,7 @@ void kill_springboard(int);
 void invalidate_icon_cache(char *);
 void rebootDevice(void);
 void respringDevice(void);
+void ECID(void);
 @end
 
 NS_ASSUME_NONNULL_END
