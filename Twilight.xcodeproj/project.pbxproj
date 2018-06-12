@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE2D695220CFD59700B5A15C /* IOKit2 in Resources */ = {isa = PBXBuildFile; fileRef = FE2D695120CFD59700B5A15C /* IOKit2 */; };
 		FE33CFEB20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */; };
 		FE33CFF620CC8EB100FD26E5 /* GKActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEF20CC8EB100FD26E5 /* GKActionSheetPicker.m */; };
 		FE33CFF820CC8EB100FD26E5 /* GKActionSheetPickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE2D695120CFD59700B5A15C /* IOKit2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IOKit2; sourceTree = "<group>"; };
 		FE33CFE920CC8C5100FD26E5 /* ScreenResolutionTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenResolutionTableViewController.h; sourceTree = "<group>"; };
 		FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenResolutionTableViewController.m; sourceTree = "<group>"; };
 		FE33CFEE20CC8EB100FD26E5 /* GKActionSheetPickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActionSheetPickerItem.h; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 		FEB048E320CDDF690008759B /* jelbrek */ = {
 			isa = PBXGroup;
 			children = (
+				FE2D695120CFD59700B5A15C /* IOKit2 */,
 				FEB048E420CDDF690008759B /* shell.h */,
 				FEB048E520CDDF690008759B /* kern_utils.h */,
 				FEB048E620CDDF690008759B /* jelbrek.m */,
@@ -587,6 +590,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2D695220CFD59700B5A15C /* IOKit2 in Resources */,
 				FEB04C4820CDE3BF0008759B /* Main.storyboard in Resources */,
 				FEB04C4920CDE3BF0008759B /* LaunchScreen.storyboard in Resources */,
 				FEB04C4B20CDE8D30008759B /* ssh.png in Resources */,

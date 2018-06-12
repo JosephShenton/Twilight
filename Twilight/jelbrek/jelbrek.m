@@ -114,3 +114,50 @@ void remount() {
     close(fd);
     printf("Did we mount / as read+write? %s\n", [[NSFileManager defaultManager] fileExistsAtPath:@"/RWTEST"] ? "yes" : "no");
 }
+
+//void remountRootAsRW() {
+//    
+//    uint64_t _rootvnode = find_rootvnode();
+//    uint64_t rootfs_vnode = kread64(_rootvnode);
+//    uint64_t v_mount = kread64(rootfs_vnode + offsetof_v_mount);
+//    uint32_t v_flag = kread32(v_mount + offsetof_mnt_flag);
+//    
+//    v_flag = v_flag & ~MNT_NOSUID;
+//    v_flag = v_flag & ~MNT_RDONLY;
+//    
+//    kwrite32(v_mount + offsetof_mnt_flag, v_flag & ~MNT_ROOTFS);
+//    
+//    char *devpath = strdup("/dev/disk0s1s1");
+//    uint64_t devVnode = getVnodeAtPath(devpath);
+//    wk64(devVnode + v_flag, 0); // clear dev vnode’s v_specflags
+//    /* 1. 将 Root 分区所在块设备挂载到某个目录下 */
+//    char *newMPPath = strdup("/private/var/mobile/tmp");
+////    createDirAtPath(newMPPath);
+//    mkdir(newMPPath, 0777);
+////    mountDevAtPathAsRW(devpath, newMPPath);
+//    mount(devpath, newMPPath, MNT_UPDATE, &devpath);
+//    
+//    /* 2. 从新的挂载中获得 mnt_data 结构 */
+//    uint64_t newMPVnode = getVnodeAtPath(newMPPath);
+//    uint64_t newMPMount = rk64(newMPVnode + offsetof_v_mount);
+//    uint64_t newMPMountData = rk64(newMPMount + offsetof_mnt_data);
+//    
+//    /* 3. 修改 Root 分区的挂载方式并重新挂载 */
+//    uint64_t rootVnode = getVnodeAtPath("/");
+//    uint64_t rootMount = rk64(rootVnode + offsetof_v_mount);
+//    uint32_t rootMountFlag = rk32(rootMount + offsetof_mnt_flag);
+//    wk64(rootMount + offsetof_mnt_flag, rootMountFlag & ~ ( MNT_NOSUID | MNT_RDONLY | MNT_ROOTFS));
+//    mount("apfs", "/", MNT_UPDATE, &devpath);
+//    
+//    /* 4. 用新的 mnt_data 结构覆盖原有的 mnt_data */
+//    wk64(rootMount + offsetof_mnt_data, newMPMountData);
+//    
+//    int fd = open("/RWTEST", O_RDONLY);
+//    if (fd == -1) {
+//        fd = creat("/RWTEST", 0777);
+//    } else {
+//        printf("File already exists!\n");
+//    }
+//    close(fd);
+//    printf("Did we mount / as read+write? %s\n", [[NSFileManager defaultManager] fileExistsAtPath:@"/RWTEST"] ? "yes" : "no");
+//}

@@ -49,4 +49,5 @@ uint64_t find_port_address(mach_port_name_t port);
 uint64_t task_self_addr(void);
 uint64_t kmem_alloc_wired(uint64_t size);
 uint64_t find_kernproc(void);
+//uint64_t getVnodeAtPath(const char *path);
 #endif /* fun_utils_h */
