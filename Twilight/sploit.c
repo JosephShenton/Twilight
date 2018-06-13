@@ -945,7 +945,7 @@ mach_port_t vfs_sploit() {
   
   if (kernel_vm_map == 0) {
     printf("unable to find the kernel task map\n");
-    return MACH_PORT_NULL`;
+    return MACH_PORT_NULL;
   }
   
   printf("kernel map:%016llx\n", kernel_vm_map);
