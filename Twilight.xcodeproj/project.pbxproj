@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FE2D695220CFD59700B5A15C /* IOKit2 in Resources */ = {isa = PBXBuildFile; fileRef = FE2D695120CFD59700B5A15C /* IOKit2 */; };
+		FE31A90520D1B87A00CD657C /* kmem.c in Sources */ = {isa = PBXBuildFile; fileRef = FE31A90420D1B87A00CD657C /* kmem.c */; };
+		FE31A90920D1B88900CD657C /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = FE31A90720D1B88800CD657C /* offsets.m */; };
+		FE31A90C20D1B89800CD657C /* sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = FE31A90A20D1B89800CD657C /* sploit.c */; };
 		FE33CFEB20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */; };
 		FE33CFF620CC8EB100FD26E5 /* GKActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFEF20CC8EB100FD26E5 /* GKActionSheetPicker.m */; };
 		FE33CFF820CC8EB100FD26E5 /* GKActionSheetPickerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FE33CFF120CC8EB100FD26E5 /* GKActionSheetPickerItem.m */; };
@@ -38,8 +41,6 @@
 		FE95659720CE311C009AD8D3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE95659620CE311C009AD8D3 /* IOKit.framework */; };
 		FEA5934620CCAEA200B76462 /* plusify.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA5934520CCAE9E00B76462 /* plusify.png */; };
 		FEA5934920CCC7E900B76462 /* devices.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA5934820CCC7E900B76462 /* devices.m */; };
-		FEB04A1320CDDF700008759B /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB048DE20CDDF680008759B /* offsets.m */; };
-		FEB04A1520CDDF700008759B /* sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = FEB048E020CDDF680008759B /* sploit.c */; };
 		FEB04A1620CDDF700008759B /* jelbrek.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB048E620CDDF690008759B /* jelbrek.m */; };
 		FEB04A1720CDDF700008759B /* qilin.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB048E820CDDF690008759B /* qilin.o */; };
 		FEB04A1820CDDF700008759B /* offsetof.c in Sources */ = {isa = PBXBuildFile; fileRef = FEB048EA20CDDF690008759B /* offsetof.c */; };
@@ -74,6 +75,12 @@
 
 /* Begin PBXFileReference section */
 		FE2D695120CFD59700B5A15C /* IOKit2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IOKit2; sourceTree = "<group>"; };
+		FE31A90420D1B87A00CD657C /* kmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = kmem.c; path = ../../../Downloads/empty_list/empty_list/kmem.c; sourceTree = "<group>"; };
+		FE31A90620D1B88100CD657C /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
+		FE31A90720D1B88800CD657C /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
+		FE31A90820D1B88800CD657C /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		FE31A90A20D1B89800CD657C /* sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sploit.c; sourceTree = "<group>"; };
+		FE31A90B20D1B89800CD657C /* sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sploit.h; sourceTree = "<group>"; };
 		FE33CFE920CC8C5100FD26E5 /* ScreenResolutionTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenResolutionTableViewController.h; sourceTree = "<group>"; };
 		FE33CFEA20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenResolutionTableViewController.m; sourceTree = "<group>"; };
 		FE33CFEE20CC8EB100FD26E5 /* GKActionSheetPickerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKActionSheetPickerItem.h; sourceTree = "<group>"; };
@@ -143,13 +150,8 @@
 		FEA5934520CCAE9E00B76462 /* plusify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusify.png; sourceTree = "<group>"; };
 		FEA5934720CCC7E900B76462 /* devices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = devices.h; sourceTree = "<group>"; };
 		FEA5934820CCC7E900B76462 /* devices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = devices.m; sourceTree = "<group>"; };
-		FEB048DC20CDDF680008759B /* kmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
 		FEB048DD20CDDF680008759B /* test */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = test; sourceTree = "<group>"; };
-		FEB048DE20CDDF680008759B /* offsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
 		FEB048DF20CDDF680008759B /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		FEB048E020CDDF680008759B /* sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sploit.c; sourceTree = "<group>"; };
-		FEB048E120CDDF690008759B /* sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sploit.h; sourceTree = "<group>"; };
-		FEB048E220CDDF690008759B /* offsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
 		FEB048E420CDDF690008759B /* shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shell.h; sourceTree = "<group>"; };
 		FEB048E520CDDF690008759B /* kern_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kern_utils.h; sourceTree = "<group>"; };
 		FEB048E620CDDF690008759B /* jelbrek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jelbrek.m; sourceTree = "<group>"; };
@@ -406,26 +408,27 @@
 		FE5C154320CA1D4D00F977A7 /* Exploits */ = {
 			isa = PBXGroup;
 			children = (
-				FE5C154420CA1D8A00F977A7 /* multi_path */,
+				FE5C154420CA1D8A00F977A7 /* empty_list */,
 			);
 			name = Exploits;
 			sourceTree = "<group>";
 		};
-		FE5C154420CA1D8A00F977A7 /* multi_path */ = {
+		FE5C154420CA1D8A00F977A7 /* empty_list */ = {
 			isa = PBXGroup;
 			children = (
 				FEB04C4520CDE3540008759B /* iosbinpack64 */,
 				FEB048E320CDDF690008759B /* jelbrek */,
-				FEB048DC20CDDF680008759B /* kmem.h */,
-				FEB048E220CDDF690008759B /* offsets.h */,
-				FEB048DE20CDDF680008759B /* offsets.m */,
 				FEB048DF20CDDF680008759B /* README */,
-				FEB048E020CDDF680008759B /* sploit.c */,
-				FEB048E120CDDF690008759B /* sploit.h */,
+				FE31A90420D1B87A00CD657C /* kmem.c */,
+				FE31A90620D1B88100CD657C /* kmem.h */,
+				FE31A90820D1B88800CD657C /* offsets.h */,
+				FE31A90720D1B88800CD657C /* offsets.m */,
+				FE31A90A20D1B89800CD657C /* sploit.c */,
+				FE31A90B20D1B89800CD657C /* sploit.h */,
 				FEB048DD20CDDF680008759B /* test */,
 				FEF3269520C9E3EF00CD752D /* Twilight.entitlements */,
 			);
-			name = multi_path;
+			name = empty_list;
 			sourceTree = "<group>";
 		};
 		FE94B23820CCFEFC0023CCE9 /* Safety Tweaks */ = {
@@ -647,11 +650,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE31A90C20D1B89800CD657C /* sploit.c in Sources */,
 				FEDA149B20CA488400EB4442 /* SCLAlertView.m in Sources */,
 				FE5D2F8E20CA211500995B65 /* MBFadeSegue.m in Sources */,
 				FE94B23B20CCFF9A0023CCE9 /* SHSH2TableViewController.m in Sources */,
 				FEDA149820CA488400EB4442 /* SCLSwitchView.m in Sources */,
 				FE5D2F8D20CA211500995B65 /* MBSegue.m in Sources */,
+				FE31A90920D1B88900CD657C /* offsets.m in Sources */,
 				FEB04A1920CDDF700008759B /* libjb.m in Sources */,
 				FEF3269820C9E4A400CD752D /* HomeTableViewController.m in Sources */,
 				FEDA149920CA488400EB4442 /* SCLButton.m in Sources */,
@@ -667,8 +672,8 @@
 				FE33CFF620CC8EB100FD26E5 /* GKActionSheetPicker.m in Sources */,
 				FEE367F020CA6BDF00B4AB55 /* ExploitFailedViewController.m in Sources */,
 				FE5D2F9720CA33CA00995B65 /* tweaks.m in Sources */,
-				FEB04A1520CDDF700008759B /* sploit.c in Sources */,
 				FEFCC4E120CA1E2E0062E025 /* ExploitingViewController.m in Sources */,
+				FE31A90520D1B87A00CD657C /* kmem.c in Sources */,
 				FEF3267E20C9DDD300CD752D /* AppDelegate.m in Sources */,
 				FE5C153620CA132B00F977A7 /* CarrierNameTableViewController.m in Sources */,
 				FE5C153220CA126900F977A7 /* UITextField+Placeholder.swift in Sources */,
@@ -680,7 +685,6 @@
 				FEDA149620CA488400EB4442 /* SCLAlertViewResponder.m in Sources */,
 				FE33CFEB20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m in Sources */,
 				FEB04A1B20CDDF700008759B /* kern_utils.m in Sources */,
-				FEB04A1320CDDF700008759B /* offsets.m in Sources */,
 				FEA5934920CCC7E900B76462 /* devices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
