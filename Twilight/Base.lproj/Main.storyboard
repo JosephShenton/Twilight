@@ -69,41 +69,63 @@
         <scene sceneID="evV-DD-zkt">
             <objects>
                 <viewController id="y0s-b3-CfS" customClass="ExploitingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jX3-GM-10n">
+                    <view key="view" contentMode="scaleToFill" id="jX3-GM-10n" customClass="GradientView" customModule="Twilight" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macOSMojaveNight.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8iJ-M3-3ce">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exploiting multi_path" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbm-Vn-BrH">
-                                <rect key="frame" x="105" y="372" width="165" height="68"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ht1-Ad-kkx" customClass="CircleProgressView">
+                                <rect key="frame" x="34.666666666666657" y="293" width="306" height="270"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50415382922535212" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="165" id="LW6-Xy-vcR"/>
-                                    <constraint firstAttribute="height" constant="68" id="eVS-lC-qpw"/>
+                                    <constraint firstAttribute="width" constant="306" id="2Mn-0b-h8c"/>
+                                    <constraint firstAttribute="height" constant="270" id="N90-T7-xaV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <color key="textColor" red="0.93333333330000001" green="0.93725490199999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ogE-Ue-wDc">
-                                <rect key="frame" x="169" y="448" width="37" height="37"/>
-                            </activityIndicatorView>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.18823529411764706" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jbm-Vn-BrH" firstAttribute="centerX" secondItem="8iJ-M3-3ce" secondAttribute="centerX" id="5cH-xG-t32"/>
-                            <constraint firstItem="8iJ-M3-3ce" firstAttribute="trailing" secondItem="xpM-w9-sZ0" secondAttribute="trailing" id="AR0-TM-PK7"/>
-                            <constraint firstItem="8iJ-M3-3ce" firstAttribute="leading" secondItem="xpM-w9-sZ0" secondAttribute="leading" id="LO6-Fy-YE5"/>
-                            <constraint firstItem="8iJ-M3-3ce" firstAttribute="top" secondItem="jX3-GM-10n" secondAttribute="top" id="O8l-2i-IiQ"/>
-                            <constraint firstItem="ogE-Ue-wDc" firstAttribute="top" secondItem="jbm-Vn-BrH" secondAttribute="bottom" constant="8" id="OKg-qa-xhH"/>
-                            <constraint firstItem="jbm-Vn-BrH" firstAttribute="centerY" secondItem="8iJ-M3-3ce" secondAttribute="centerY" id="VFB-tE-phu"/>
-                            <constraint firstItem="ogE-Ue-wDc" firstAttribute="centerX" secondItem="8iJ-M3-3ce" secondAttribute="centerX" id="iMp-H6-z6g"/>
-                            <constraint firstItem="8iJ-M3-3ce" firstAttribute="bottom" secondItem="xpM-w9-sZ0" secondAttribute="bottom" id="zee-Pk-YxC"/>
+                            <constraint firstItem="Ht1-Ad-kkx" firstAttribute="centerY" secondItem="xpM-w9-sZ0" secondAttribute="centerY" id="8BD-W1-LAd"/>
+                            <constraint firstItem="Ht1-Ad-kkx" firstAttribute="centerX" secondItem="xpM-w9-sZ0" secondAttribute="centerX" id="kfq-Ix-pzK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xpM-w9-sZ0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.14117647058823529" green="0.5490196078431373" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.22352941176470587" green="0.80000000000000004" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowX">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowY">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startPointX">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="startPointY">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endPointX">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="endPointY">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="circleProgressView" destination="Ht1-Ad-kkx" id="7EO-hF-Qt0"/>
                         <segue destination="49e-Tb-3d3" kind="custom" identifier="showTabControllerSegue" customClass="MBFadeSegue" id="LXO-DS-E7a"/>
                         <segue destination="t7v-iY-Fw7" kind="presentation" identifier="exploitFailedSegue" id="1Rh-tk-Opw"/>
                     </connections>
@@ -615,7 +637,7 @@
                                         <rect key="frame" x="0.0" y="733" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ID-3k-iZb" id="83p-8p-Yj3">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="revokes.png" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-kN-kIa">
@@ -664,7 +686,7 @@
                                         <rect key="frame" x="0.0" y="777" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9cI-fj-zoZ" id="kkk-DI-E81">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fal-Yg-snR">
@@ -717,7 +739,7 @@
                                         <rect key="frame" x="0.0" y="877" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pql-Oo-uUS" id="zmI-eM-T3N">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusify.png" translatesAutoresizingMaskIntoConstraints="NO" id="SIF-zC-npO">
@@ -773,7 +795,7 @@
                                         <rect key="frame" x="0.0" y="977" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3AJ-Wr-FCV" id="ac8-BT-17a">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenresolution.png" translatesAutoresizingMaskIntoConstraints="NO" id="mZf-TL-cjI">
@@ -2743,7 +2765,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Installed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLf-Jw-9Qi">
-                                                    <rect key="frame" x="276" y="11" width="65" height="21"/>
+                                                    <rect key="frame" x="276" y="10.999999999999998" width="65" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.3803921569" green="0.38431372549999998" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2792,7 +2814,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Installed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xx4-mp-kX4">
-                                                    <rect key="frame" x="276" y="11" width="65" height="21"/>
+                                                    <rect key="frame" x="276" y="10.999999999999998" width="65" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.3803921569" green="0.38431372549999998" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2848,7 +2870,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKH-p3-bnv">
-                                                    <rect key="frame" x="264" y="11" width="77" height="21"/>
+                                                    <rect key="frame" x="264" y="10.999999999999998" width="77" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.3803921569" green="0.38431372549999998" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2897,7 +2919,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-ka-7fn">
-                                                    <rect key="frame" x="264" y="11" width="77" height="21"/>
+                                                    <rect key="frame" x="264" y="10.999999999999998" width="77" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.3803921569" green="0.38431372549999998" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -3881,7 +3903,6 @@
         <image name="carrier.png" width="1536" height="1536"/>
         <image name="carrier_screenshot.png" width="750" height="1334"/>
         <image name="emoji.png" width="1536" height="1536"/>
-        <image name="macOSMojaveNight.jpg" width="5120" height="2880"/>
         <image name="nonce.png" width="1536" height="1536"/>
         <image name="plusify.png" width="1536" height="1536"/>
         <image name="revokes.png" width="1536" height="1536"/>

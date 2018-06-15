@@ -35,7 +35,6 @@
 		FE94B23420CCFA0C0023CCE9 /* nonce.png in Resources */ = {isa = PBXBuildFile; fileRef = FE94B23320CCFA080023CCE9 /* nonce.png */; };
 		FE94B23620CCFADC0023CCE9 /* shsh2.png in Resources */ = {isa = PBXBuildFile; fileRef = FE94B23520CCFAD20023CCE9 /* shsh2.png */; };
 		FE94B23B20CCFF9A0023CCE9 /* SHSH2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE94B23A20CCFF9A0023CCE9 /* SHSH2TableViewController.m */; };
-		FE95659720CE311C009AD8D3 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE95659620CE311C009AD8D3 /* IOKit.framework */; };
 		FEA5934620CCAEA200B76462 /* plusify.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA5934520CCAE9E00B76462 /* plusify.png */; };
 		FEA5934920CCC7E900B76462 /* devices.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA5934820CCC7E900B76462 /* devices.m */; };
 		FEB04A1320CDDF700008759B /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB048DE20CDDF680008759B /* offsets.m */; };
@@ -52,6 +51,11 @@
 		FEB04C4820CDE3BF0008759B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF3268520C9DDD300CD752D /* Main.storyboard */; };
 		FEB04C4920CDE3BF0008759B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF3268A20C9DDD800CD752D /* LaunchScreen.storyboard */; };
 		FEB04C4B20CDE8D30008759B /* ssh.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB04C4A20CDE8D20008759B /* ssh.png */; };
+		FED95F3020D3E148003DAF70 /* CircleShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FED95F2D20D3E148003DAF70 /* CircleShapeLayer.m */; };
+		FED95F3120D3E148003DAF70 /* CircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = FED95F2F20D3E148003DAF70 /* CircleProgressView.m */; };
+		FED95F3620D3E770003DAF70 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE95659620CE311C009AD8D3 /* IOKit.framework */; };
+		FED95F3820D3E84C003DAF70 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED95F3720D3E84C003DAF70 /* GradientView.swift */; };
+		FED95F3A20D3EB5E003DAF70 /* layer.png in Resources */ = {isa = PBXBuildFile; fileRef = FED95F3920D3EB5E003DAF70 /* layer.png */; };
 		FEDA149420CA488400EB4442 /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148420CA488400EB4442 /* SCLTimerDisplay.m */; };
 		FEDA149520CA488400EB4442 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148620CA488400EB4442 /* SCLAlertViewStyleKit.m */; };
 		FEDA149620CA488400EB4442 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDA148A20CA488400EB4442 /* SCLAlertViewResponder.m */; };
@@ -166,6 +170,12 @@
 		FEB048F120CDDF690008759B /* libjb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libjb.h; sourceTree = "<group>"; };
 		FEB04C4520CDE3540008759B /* iosbinpack64 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iosbinpack64; sourceTree = "<group>"; };
 		FEB04C4A20CDE8D20008759B /* ssh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ssh.png; sourceTree = "<group>"; };
+		FED95F2C20D3E148003DAF70 /* CircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressView.h; sourceTree = "<group>"; };
+		FED95F2D20D3E148003DAF70 /* CircleShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleShapeLayer.m; sourceTree = "<group>"; };
+		FED95F2E20D3E148003DAF70 /* CircleShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleShapeLayer.h; sourceTree = "<group>"; };
+		FED95F2F20D3E148003DAF70 /* CircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressView.m; sourceTree = "<group>"; };
+		FED95F3720D3E84C003DAF70 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		FED95F3920D3EB5E003DAF70 /* layer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = layer.png; sourceTree = "<group>"; };
 		FEDA148320CA488400EB4442 /* SCLSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLSwitchView.h; sourceTree = "<group>"; };
 		FEDA148420CA488400EB4442 /* SCLTimerDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTimerDisplay.m; sourceTree = "<group>"; };
 		FEDA148520CA488400EB4442 /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
@@ -211,8 +221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED95F3620D3E770003DAF70 /* IOKit.framework in Frameworks */,
 				FEB04A1720CDDF700008759B /* qilin.o in Frameworks */,
-				FE95659720CE311C009AD8D3 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +317,7 @@
 		FE5C151920C9F17700F977A7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FED95F3920D3EB5E003DAF70 /* layer.png */,
 				FEB04C4A20CDE8D20008759B /* ssh.png */,
 				FEA5934520CCAE9E00B76462 /* plusify.png */,
 				FE5D2F9320CA2D5500995B65 /* ads.png */,
@@ -359,6 +370,7 @@
 				FE5D2F9620CA33CA00995B65 /* tweaks.m */,
 				FEA5934720CCC7E900B76462 /* devices.h */,
 				FEA5934820CCC7E900B76462 /* devices.m */,
+				FED95F3720D3E84C003DAF70 /* GradientView.swift */,
 			);
 			name = "Global Classes";
 			sourceTree = "<group>";
@@ -366,6 +378,7 @@
 		FE5C154020CA1D0A00F977A7 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				FED95F2B20D3E148003DAF70 /* CircularProgressView */,
 				FE33CFEC20CC8EB100FD26E5 /* GKActionSheetPicker */,
 				FEDA148220CA488400EB4442 /* SCLAlertView */,
 				FEFCC4E620CA20B30062E025 /* Segues */,
@@ -459,6 +472,24 @@
 			path = jelbrek;
 			sourceTree = "<group>";
 		};
+		FED95F2B20D3E148003DAF70 /* CircularProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				FED95F2C20D3E148003DAF70 /* CircleProgressView.h */,
+				FED95F2D20D3E148003DAF70 /* CircleShapeLayer.m */,
+				FED95F2E20D3E148003DAF70 /* CircleShapeLayer.h */,
+				FED95F2F20D3E148003DAF70 /* CircleProgressView.m */,
+			);
+			path = CircularProgressView;
+			sourceTree = "<group>";
+		};
+		FED95F3520D3E770003DAF70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FEDA148220CA488400EB4442 /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +519,7 @@
 			children = (
 				FEF3267B20C9DDD300CD752D /* Twilight */,
 				FEF3267A20C9DDD300CD752D /* Products */,
+				FED95F3520D3E770003DAF70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -601,6 +633,7 @@
 				FE94B23420CCFA0C0023CCE9 /* nonce.png in Resources */,
 				FEFCC4E420CA1F810062E025 /* macOSMojaveDay.jpg in Resources */,
 				FE5D2F9220CA2AA900995B65 /* twilight_updates.jpg in Resources */,
+				FED95F3A20D3EB5E003DAF70 /* layer.png in Resources */,
 				FE5C153C20CA184600F977A7 /* carrier_screenshot.png in Resources */,
 				FE5C152120C9F29C00F977A7 /* drill-filled.png in Resources */,
 				FEF3268920C9DDD800CD752D /* Assets.xcassets in Resources */,
@@ -647,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED95F3820D3E84C003DAF70 /* GradientView.swift in Sources */,
 				FEDA149B20CA488400EB4442 /* SCLAlertView.m in Sources */,
 				FE5D2F8E20CA211500995B65 /* MBFadeSegue.m in Sources */,
 				FE94B23B20CCFF9A0023CCE9 /* SHSH2TableViewController.m in Sources */,
@@ -676,6 +710,8 @@
 				FEF3268F20C9DDD800CD752D /* main.m in Sources */,
 				FEDA149420CA488400EB4442 /* SCLTimerDisplay.m in Sources */,
 				FEE367ED20CA6B4900B4AB55 /* RoundedView.swift in Sources */,
+				FED95F3020D3E148003DAF70 /* CircleShapeLayer.m in Sources */,
+				FED95F3120D3E148003DAF70 /* CircleProgressView.m in Sources */,
 				FEE367F320CA6CC400B4AB55 /* BadgeColorTableViewController.m in Sources */,
 				FEDA149620CA488400EB4442 /* SCLAlertViewResponder.m in Sources */,
 				FE33CFEB20CC8C5100FD26E5 /* ScreenResolutionTableViewController.m in Sources */,
@@ -834,7 +870,7 @@
 				);
 				INFOPLIST_FILE = Twilight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Twilight/iosbinpack64/usr/bin",
@@ -863,7 +899,7 @@
 				);
 				INFOPLIST_FILE = Twilight/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Twilight/iosbinpack64/usr/bin",
